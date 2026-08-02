@@ -12,6 +12,7 @@ interface DestinationBookingDialogProps {
     en: string
     img: string
     trips: number
+    tag?: string | null
   } | null
   open: boolean
   onOpenChange: (open: boolean) => void
@@ -64,18 +65,36 @@ export function DestinationBookingDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <div className="space-y-6">
-        {/* Destination Image */}
-        <div className="relative -mx-6 -mt-8 mb-6 h-48 overflow-hidden rounded-t-2xl">
-          <Image
-            src={destination.img || '/placeholder.svg'}
-            alt={`صور من ${destination.name}`}
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          <h2 className="absolute bottom-4 right-4 font-heading text-3xl font-bold text-white">
-            {destination.name}
-          </h2>
+        {/* Destination Image Card - Enhanced Design */}
+        <div className="relative -mx-6 -mt-8 mb-6 overflow-hidden rounded-2xl">
+          <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-white via-gray-100 to-slate-700">
+            <Image
+              src={destination.img || '/placeholder.svg'}
+              alt={`صور من ${destination.name}`}
+              fill
+              className="object-cover opacity-100"
+            />
+            {/* Gradient Overlay - White fade to dark */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-black/70" />
+            
+            {/* Most Popular Badge */}
+            {destination.tag && (
+              <span className="absolute right-4 top-4 rounded-full bg-accent px-4 py-1.5 text-sm font-semibold text-accent-foreground shadow-md">
+                {destination.tag}
+              </span>
+            )}
+            
+            {/* Bottom Content */}
+            <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-6 text-white">
+              <div className="mb-3 flex items-center gap-2 text-sm text-white/90">
+                <MapPin className="h-4 w-4" />
+                <span>{destination.trips} برنامج سياحي</span>
+              </div>
+              <h2 className="font-heading text-3xl font-bold text-white text-balance">
+                {destination.name}
+              </h2>
+            </div>
+          </div>
         </div>
 
         {/* Destination Info */}
