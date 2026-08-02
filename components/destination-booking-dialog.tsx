@@ -152,14 +152,14 @@ const destinationData: Record<
 }
 
 const placeTypeColors: Record<string, string> = {
-  شاطئ: 'bg-blue-100 text-blue-700',
-  مدينة: 'bg-purple-100 text-purple-700',
-  طبيعة: 'bg-green-100 text-green-700',
-  تراث: 'bg-amber-100 text-amber-700',
-  ثقافة: 'bg-rose-100 text-rose-700',
-  منتجع: 'bg-teal-100 text-teal-700',
-  معالم: 'bg-indigo-100 text-indigo-700',
-  ترفيه: 'bg-orange-100 text-orange-700',
+  شاطئ: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
+  مدينة: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
+  طبيعة: 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300',
+  تراث: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
+  ثقافة: 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300',
+  منتجع: 'bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300',
+  معالم: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300',
+  ترفيه: 'bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300',
 }
 
 export function DestinationBookingDialog({
@@ -182,34 +182,35 @@ export function DestinationBookingDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <div className="space-y-0">
-        {/* Hero Image — full bleed */}
-        <div className="relative -mx-6 -mt-8 mb-6 h-64 overflow-hidden rounded-t-2xl md:h-72">
+        {/* Hero Image — full bleed, flush to dialog edges, above the padded body */}
+        <div className="relative -mx-5 -mt-0 mb-5 h-56 overflow-hidden rounded-t-2xl sm:-mx-7 sm:h-72">
           <Image
             src={destination.img || '/placeholder.svg'}
             alt={`صور من ${destination.name}`}
             fill
             className="object-cover"
+            priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
           {destination.tag && (
-            <span className="absolute right-4 top-4 rounded-full bg-accent px-4 py-1.5 text-sm font-semibold text-accent-foreground shadow">
+            <span className="absolute left-4 top-4 rounded-full bg-accent px-4 py-1.5 text-sm font-semibold text-accent-foreground shadow">
               {destination.tag}
             </span>
           )}
 
-          {/* Title block */}
-          <div className="absolute inset-x-0 bottom-0 p-6">
-            <div className="mb-1.5 flex items-center gap-2 text-sm text-white/80">
-              <MapPin className="h-4 w-4" />
+          {/* Title block at bottom of hero */}
+          <div className="absolute inset-x-0 bottom-0 p-5">
+            <div className="mb-1.5 flex items-center gap-1.5 text-xs text-white/75">
+              <MapPin className="h-3.5 w-3.5" />
               <span>{destination.en}</span>
             </div>
             <div className="flex items-end justify-between gap-4">
-              <h2 className="font-heading text-3xl font-bold text-white text-balance">
+              <h2 className="font-heading text-2xl font-bold text-white text-balance sm:text-3xl">
                 {destination.name}
               </h2>
-              <div className="flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 backdrop-blur-sm">
-                <Star className="h-4 w-4 fill-accent text-accent" />
+              <div className="flex shrink-0 items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 backdrop-blur-sm">
+                <Star className="h-3.5 w-3.5 fill-accent text-accent" />
                 <span className="text-sm font-semibold text-white">{info.rating}</span>
               </div>
             </div>
@@ -287,7 +288,7 @@ export function DestinationBookingDialog({
           )}
 
           {/* Programs count + CTA */}
-          <div className="flex items-center justify-between rounded-xl bg-primary/8 px-5 py-4">
+          <div className="flex items-center justify-between rounded-xl bg-secondary px-5 py-4">
             <div>
               <p className="text-sm text-muted-foreground">البرامج المتاحة</p>
               <p className="font-heading text-2xl font-bold text-primary">
