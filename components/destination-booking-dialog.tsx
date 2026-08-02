@@ -1,10 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 import { Dialog } from '@/components/ui/dialog'
-import { Button } from '@/components/ui/button'
-import { MapPin, Calendar, Users, Mail, Phone } from 'lucide-react'
+import { MapPin, Sun, Thermometer, Clock, Plane, Camera, Star, ArrowLeft } from 'lucide-react'
 
 interface DestinationBookingDialogProps {
   destination: {
@@ -18,230 +16,294 @@ interface DestinationBookingDialogProps {
   onOpenChange: (open: boolean) => void
 }
 
+// Static enrichment data per destination
+const destinationData: Record<
+  string,
+  {
+    description: string
+    climate: string
+    bestTime: string
+    flightTime: string
+    rating: number
+    highlights: string[]
+    places: { name: string; type: string }[]
+  }
+> = {
+  Maldives: {
+    description:
+      'المالديف جنة استوائية في المحيط الهندي تتميز بمياهها الفيروزية الصافية والشعاب المرجانية الخلابة وفنادق الفيلات المائية الفاخرة.',
+    climate: 'استوائي دافئ',
+    bestTime: 'نوفمبر – أبريل',
+    flightTime: '6 ساعات',
+    rating: 4.9,
+    highlights: ['غوص وسنوركل', 'فيلات مائية', 'غروب الشمس', 'مأكولات بحرية'],
+    places: [
+      { name: 'جزيرة مافوشي', type: 'شاطئ' },
+      { name: 'عاصمة ماليه', type: 'مدينة' },
+      { name: 'جزيرة بارو', type: 'منتجع' },
+      { name: 'جزيرة راا أتول', type: 'شاطئ' },
+    ],
+  },
+  Malaysia: {
+    description:
+      'ماليزيا وجهة متنوعة تجمع بين ناطحات السحاب الحديثة وأدغال المطر البكر والشواطئ الاستوائية الساحرة والتراث الثقافي الغني.',
+    climate: 'استوائي رطب',
+    bestTime: 'مارس – أكتوبر',
+    flightTime: '7 ساعات',
+    rating: 4.7,
+    highlights: ['برج بتروناس', 'غابات المطر', 'المطبخ المتنوع', 'التسوق'],
+    places: [
+      { name: 'كوالالمبور', type: 'مدينة' },
+      { name: 'جزيرة لنكاوي', type: 'شاطئ' },
+      { name: 'بينانج', type: 'تراث' },
+      { name: 'كاميرون هايلاندز', type: 'طبيعة' },
+    ],
+  },
+  Thailand: {
+    description:
+      'تايلاند أرض الابتسامة تسحرك بمعابدها الذهبية الباذخة وشواطئها الكريستالية وثقافتها العريقة ومطبخها الشهير عالمياً.',
+    climate: 'استوائي حار',
+    bestTime: 'نوفمبر – فبراير',
+    flightTime: '6.5 ساعة',
+    rating: 4.8,
+    highlights: ['معابد بوذية', 'شواطئ خلابة', 'الأسواق العائمة', 'سباحة الأفيال'],
+    places: [
+      { name: 'بانكوك', type: 'مدينة' },
+      { name: 'جزيرة بوكيت', type: 'شاطئ' },
+      { name: 'شيانغ ماي', type: 'ثقافة' },
+      { name: 'جزيرة كوه سامي', type: 'شاطئ' },
+    ],
+  },
+  Indonesia: {
+    description:
+      'بالي جوهرة إندونيسيا المتاجرة بأرزها المدرجات وهيكلها الهندوسية ومصطبات الأرز الزمردية وشواطئها الرائعة.',
+    climate: 'استوائي',
+    bestTime: 'أبريل – أكتوبر',
+    flightTime: '8 ساعات',
+    rating: 4.8,
+    highlights: ['حقول الأرز', 'معابد هندوسية', 'تصفح الأمواج', 'العلاج التقليدي'],
+    places: [
+      { name: 'أوبود', type: 'ثقافة' },
+      { name: 'سيمينياك', type: 'شاطئ' },
+      { name: 'معبد تاناه لوت', type: 'تراث' },
+      { name: 'كوتا', type: 'شاطئ' },
+    ],
+  },
+  Turkey: {
+    description:
+      'تركيا ملتقى الحضارات تأخذك في رحلة عبر التاريخ بين قباب إسطنبول الزرقاء وتضاريس كبادوكيا الفريدة وشواطئ البحر الأبيض الدافئة.',
+    climate: 'معتدل متوسطي',
+    bestTime: 'أبريل – يونيو / سبتمبر – نوفمبر',
+    flightTime: '3.5 ساعة',
+    rating: 4.7,
+    highlights: ['المسجد الأزرق', 'بالون الهواء', 'الحمامات التركية', 'المطبخ العثماني'],
+    places: [
+      { name: 'إسطنبول', type: 'مدينة' },
+      { name: 'كبادوكيا', type: 'طبيعة' },
+      { name: 'أنطاليا', type: 'شاطئ' },
+      { name: 'أفسوس', type: 'تراث' },
+    ],
+  },
+  Vietnam: {
+    description:
+      'فيتنام كنز آسيا المخفي بتنوعها المذهل من خليج هالونج الأسطوري إلى مدينة هوي أن العريقة ومدرجات موكانشاي الخضراء.',
+    climate: 'استوائي موسمي',
+    bestTime: 'فبراير – أبريل',
+    flightTime: '7 ساعات',
+    rating: 4.6,
+    highlights: ['خليج هالونج', 'مدينة هوي أن', 'مدرجات الأرز', 'المطبخ الشهير'],
+    places: [
+      { name: 'خليج هالونج', type: 'طبيعة' },
+      { name: 'هانوي', type: 'مدينة' },
+      { name: 'هوشيمن', type: 'مدينة' },
+      { name: 'هوي أن', type: 'تراث' },
+    ],
+  },
+  'Sri Lanka': {
+    description:
+      'سريلانكا الجوهرة في المحيط الهندي تقدم مزيجاً فريداً من الشواطئ الذهبية والغابات المطيرة ومزارع الشاي الخضراء والمعابد البوذية الروحية.',
+    climate: 'استوائي رطب',
+    bestTime: 'ديسمبر – مارس',
+    flightTime: '5 ساعات',
+    rating: 4.5,
+    highlights: ['الصخرة الأسدية', 'مزارع الشاي', 'سفاري الأفيال', 'معابد بوذية'],
+    places: [
+      { name: 'كولومبو', type: 'مدينة' },
+      { name: 'صخرة سيغيريا', type: 'تراث' },
+      { name: 'كاندي', type: 'ثقافة' },
+      { name: 'إيلا', type: 'طبيعة' },
+    ],
+  },
+  Singapore: {
+    description:
+      'سنغافورة مدينة المستقبل حيث تلتقي ناطحات السحاب بالحدائق الخضراء والمطبخ العالمي والتجارب الترفيهية الأكثر إبهاراً في آسيا.',
+    climate: 'استوائي معتدل',
+    bestTime: 'طوال العام',
+    flightTime: '7.5 ساعة',
+    rating: 4.8,
+    highlights: ['حدائق الشجرة', 'أوركيد جاردن', 'مارينا باي', 'يونيفرسال ستوديوز'],
+    places: [
+      { name: 'مارينا باي', type: 'معالم' },
+      { name: 'حديقة الطيور', type: 'طبيعة' },
+      { name: 'سنتوسا', type: 'ترفيه' },
+      { name: 'شارع العرب', type: 'تراث' },
+    ],
+  },
+}
+
+const placeTypeColors: Record<string, string> = {
+  شاطئ: 'bg-blue-100 text-blue-700',
+  مدينة: 'bg-purple-100 text-purple-700',
+  طبيعة: 'bg-green-100 text-green-700',
+  تراث: 'bg-amber-100 text-amber-700',
+  ثقافة: 'bg-rose-100 text-rose-700',
+  منتجع: 'bg-teal-100 text-teal-700',
+  معالم: 'bg-indigo-100 text-indigo-700',
+  ترفيه: 'bg-orange-100 text-orange-700',
+}
+
 export function DestinationBookingDialog({
   destination,
   open,
   onOpenChange,
 }: DestinationBookingDialogProps) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    numberOfPeople: '',
-    preferredDate: '',
-    notes: '',
-  })
-
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically send the data to your backend
-    console.log('Booking request:', { destination: destination?.name, ...formData })
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      onOpenChange(false)
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        numberOfPeople: '',
-        preferredDate: '',
-        notes: '',
-      })
-    }, 2000)
-  }
-
   if (!destination) return null
+
+  const info = destinationData[destination.en] ?? {
+    description: `${destination.name} وجهة سياحية رائعة تضم ${destination.trips} برنامجاً سياحياً متنوعاً يناسب جميع الأذواق والميزانيات.`,
+    climate: 'معتدل',
+    bestTime: 'طوال العام',
+    flightTime: 'يتفاوت',
+    rating: 4.5,
+    highlights: ['طبيعة خلابة', 'ثقافة غنية', 'مأكولات شهية', 'تجارب فريدة'],
+    places: [],
+  }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <div className="space-y-6">
-        {/* Destination Image Card - Enhanced Design */}
-        <div className="relative -mx-6 -mt-8 mb-6 overflow-hidden rounded-2xl">
-          <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-white via-gray-100 to-slate-700">
-            <Image
-              src={destination.img || '/placeholder.svg'}
-              alt={`صور من ${destination.name}`}
-              fill
-              className="object-cover opacity-100"
-            />
-            {/* Gradient Overlay - White fade to dark */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-black/70" />
-            
-            {/* Most Popular Badge */}
-            {destination.tag && (
-              <span className="absolute right-4 top-4 rounded-full bg-accent px-4 py-1.5 text-sm font-semibold text-accent-foreground shadow-md">
-                {destination.tag}
-              </span>
-            )}
-            
-            {/* Bottom Content */}
-            <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-6 text-white">
-              <div className="mb-3 flex items-center gap-2 text-sm text-white/90">
-                <MapPin className="h-4 w-4" />
-                <span>{destination.trips} برنامج سياحي</span>
-              </div>
+      <div className="space-y-0">
+        {/* Hero Image — full bleed */}
+        <div className="relative -mx-6 -mt-8 mb-6 h-64 overflow-hidden rounded-t-2xl md:h-72">
+          <Image
+            src={destination.img || '/placeholder.svg'}
+            alt={`صور من ${destination.name}`}
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+
+          {destination.tag && (
+            <span className="absolute right-4 top-4 rounded-full bg-accent px-4 py-1.5 text-sm font-semibold text-accent-foreground shadow">
+              {destination.tag}
+            </span>
+          )}
+
+          {/* Title block */}
+          <div className="absolute inset-x-0 bottom-0 p-6">
+            <div className="mb-1.5 flex items-center gap-2 text-sm text-white/80">
+              <MapPin className="h-4 w-4" />
+              <span>{destination.en}</span>
+            </div>
+            <div className="flex items-end justify-between gap-4">
               <h2 className="font-heading text-3xl font-bold text-white text-balance">
                 {destination.name}
               </h2>
+              <div className="flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 backdrop-blur-sm">
+                <Star className="h-4 w-4 fill-accent text-accent" />
+                <span className="text-sm font-semibold text-white">{info.rating}</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Destination Info */}
-        <div className="grid grid-cols-2 gap-4">
-          <div className="flex items-center gap-2 rounded-lg bg-secondary/50 p-3">
-            <MapPin className="h-5 w-5 text-primary" />
-            <div>
-              <div className="text-sm text-muted-foreground">الدولة</div>
-              <div className="font-semibold">{destination.en}</div>
+        <div className="space-y-6 pb-2">
+          {/* Quick stats row */}
+          <div className="grid grid-cols-3 gap-3">
+            <div className="flex flex-col items-center gap-1 rounded-xl bg-secondary/60 px-3 py-3 text-center">
+              <Thermometer className="h-5 w-5 text-primary" />
+              <span className="text-xs text-muted-foreground">المناخ</span>
+              <span className="text-sm font-semibold leading-tight">{info.climate}</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 rounded-xl bg-secondary/60 px-3 py-3 text-center">
+              <Sun className="h-5 w-5 text-accent" />
+              <span className="text-xs text-muted-foreground">أفضل وقت</span>
+              <span className="text-sm font-semibold leading-tight">{info.bestTime}</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 rounded-xl bg-secondary/60 px-3 py-3 text-center">
+              <Plane className="h-5 w-5 text-primary" />
+              <span className="text-xs text-muted-foreground">وقت الرحلة</span>
+              <span className="text-sm font-semibold leading-tight">{info.flightTime}</span>
             </div>
           </div>
-          <div className="flex items-center gap-2 rounded-lg bg-secondary/50 p-3">
-            <Calendar className="h-5 w-5 text-primary" />
-            <div>
-              <div className="text-sm text-muted-foreground">البرامج المتاحة</div>
-              <div className="font-semibold">{destination.trips} برنامج</div>
-            </div>
-          </div>
-        </div>
 
-        {/* Success Message */}
-        {submitted && (
-          <div className="rounded-lg bg-green-50 p-4 text-center">
-            <p className="font-semibold text-green-900">
-              شكراً لك! تم استقبال طلبك بنجاح
-            </p>
-            <p className="text-sm text-green-800">سيتم التواصل معك قريباً</p>
-          </div>
-        )}
+          {/* Description */}
+          <p className="leading-relaxed text-muted-foreground text-pretty">
+            {info.description}
+          </p>
 
-        {!submitted && (
-          <>
-            <div className="border-t pt-6">
-              <h3 className="mb-4 font-heading text-lg font-bold">
-                اطلب عرضك السياحي
-              </h3>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Name */}
-                <div>
-                  <label className="mb-2 block text-sm font-medium">
-                    الاسم الكامل
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="أدخل اسمك الكامل"
-                    className="w-full rounded-lg border border-border bg-background px-4 py-2 text-right placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label className="mb-2 block text-sm font-medium">
-                    البريد الإلكتروني
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="example@email.com"
-                    className="w-full rounded-lg border border-border bg-background px-4 py-2 text-right placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <label className="mb-2 block text-sm font-medium">
-                    رقم الهاتف
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="+966501234567"
-                    className="w-full rounded-lg border border-border bg-background px-4 py-2 text-right placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                </div>
-
-                {/* Number of People */}
-                <div>
-                  <label className="mb-2 block text-sm font-medium">
-                    عدد الأشخاص
-                  </label>
-                  <select
-                    name="numberOfPeople"
-                    value={formData.numberOfPeople}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full rounded-lg border border-border bg-background px-4 py-2 text-right focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  >
-                    <option value="">اختر عدد الأشخاص</option>
-                    <option value="1">شخص واحد</option>
-                    <option value="2-3">شخصان إلى ثلاثة</option>
-                    <option value="4-6">4 إلى 6 أشخاص</option>
-                    <option value="7+">7 أشخاص فأكثر</option>
-                  </select>
-                </div>
-
-                {/* Preferred Date */}
-                <div>
-                  <label className="mb-2 block text-sm font-medium">
-                    التاريخ المفضل للسفر
-                  </label>
-                  <input
-                    type="date"
-                    name="preferredDate"
-                    value={formData.preferredDate}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full rounded-lg border border-border bg-background px-4 py-2 text-right focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                </div>
-
-                {/* Notes */}
-                <div>
-                  <label className="mb-2 block text-sm font-medium">
-                    ملاحظات إضافية (اختياري)
-                  </label>
-                  <textarea
-                    name="notes"
-                    value={formData.notes}
-                    onChange={handleInputChange}
-                    placeholder="أخبرنا عن احتياجاتك الخاصة..."
-                    rows={3}
-                    className="w-full rounded-lg border border-border bg-background px-4 py-2 text-right placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <Button
-                  type="submit"
-                  className="w-full gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+          {/* Highlights */}
+          <div>
+            <h3 className="mb-3 flex items-center gap-2 font-heading text-base font-bold">
+              <Camera className="h-4 w-4 text-primary" />
+              أبرز المميزات
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {info.highlights.map((h) => (
+                <span
+                  key={h}
+                  className="rounded-full border border-border bg-card px-3 py-1 text-sm text-foreground"
                 >
-                  <span>إرسال طلب الحجز</span>
-                </Button>
-              </form>
+                  {h}
+                </span>
+              ))}
             </div>
-          </>
-        )}
+          </div>
+
+          {/* Tourist places */}
+          {info.places.length > 0 && (
+            <div>
+              <h3 className="mb-3 flex items-center gap-2 font-heading text-base font-bold">
+                <MapPin className="h-4 w-4 text-primary" />
+                أبرز الأماكن السياحية
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {info.places.map((place) => (
+                  <div
+                    key={place.name}
+                    className="flex items-center justify-between rounded-xl border border-border bg-card p-3"
+                  >
+                    <span className="font-medium">{place.name}</span>
+                    <span
+                      className={`rounded-full px-2 py-0.5 text-xs font-medium ${
+                        placeTypeColors[place.type] ?? 'bg-muted text-muted-foreground'
+                      }`}
+                    >
+                      {place.type}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Programs count + CTA */}
+          <div className="flex items-center justify-between rounded-xl bg-primary/8 px-5 py-4">
+            <div>
+              <p className="text-sm text-muted-foreground">البرامج المتاحة</p>
+              <p className="font-heading text-2xl font-bold text-primary">
+                {destination.trips}
+                <span className="mr-1 text-base font-medium text-muted-foreground">برنامج سياحي</span>
+              </p>
+            </div>
+            <button
+              onClick={() => onOpenChange(false)}
+              className="flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              استعرض البرامج
+              <ArrowLeft className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
       </div>
     </Dialog>
   )

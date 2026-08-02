@@ -20,7 +20,7 @@ export function Dialog({ open, onOpenChange, children }: DialogProps) {
         onClick={() => onOpenChange(false)}
       />
       {/* Dialog content */}
-      <div className="relative z-50 max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-card p-6 shadow-2xl md:p-8">
+      <div className="relative z-50 max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl bg-card p-6 shadow-2xl md:p-8">
         <button
           onClick={() => onOpenChange(false)}
           className="absolute right-4 top-4 rounded-lg p-1 hover:bg-secondary"
