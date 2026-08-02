@@ -20,15 +20,19 @@ export function Dialog({ open, onOpenChange, children }: DialogProps) {
         onClick={() => onOpenChange(false)}
       />
       {/* Dialog content */}
-      <div className="relative z-50 max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-card p-6 shadow-2xl md:p-8">
+      <div className="relative z-50 mx-4 max-h-[90dvh] w-full max-w-xl overflow-y-auto rounded-2xl bg-card shadow-2xl sm:mx-0">
+        {/* Close button — always visible above content */}
         <button
           onClick={() => onOpenChange(false)}
-          className="absolute right-4 top-4 rounded-lg p-1 hover:bg-secondary"
+          className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60"
           aria-label="إغلاق"
         >
-          <X className="h-6 w-6" />
+          <X className="h-4 w-4" />
         </button>
-        {children}
+        {/* Scrollable body — no extra padding on top so the hero image fills edge-to-edge */}
+        <div className="px-5 pb-6 pt-0 sm:px-7 sm:pb-7">
+          {children}
+        </div>
       </div>
     </div>
   )
