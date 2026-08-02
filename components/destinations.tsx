@@ -1,5 +1,9 @@
+'use client'
+
+import { useState } from "react"
 import Image from "next/image"
 import { MapPin, ArrowLeft } from "lucide-react"
+import { DestinationBookingDialog } from "@/components/destination-booking-dialog"
 
 const destinations = [
   { name: "المالديف", en: "Maldives", img: "/dest-maldives.png", trips: 18, tag: "الأكثر طلباً" },
@@ -13,28 +17,37 @@ const destinations = [
 ]
 
 export function Destinations() {
-  return (
-    <section id="destinations" className="py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-12 flex flex-col items-center text-center">
-          <span className="mb-3 rounded-full bg-accent/15 px-4 py-1.5 text-sm font-medium text-accent-foreground">
-            وجهاتنا السياحية
-          </span>
-          <h2 className="font-heading text-3xl font-bold text-balance md:text-4xl">
-            اكتشف أجمل وجهات آسيا والعالم
-          </h2>
-          <p className="mt-4 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
-            باقات سياحية متكاملة تشمل الطيران والإقامة والجولات، مصممة خصيصاً لتناسب العائلة العربية.
-          </p>
-        </div>
+  const [selectedDestination, setSelectedDestination] = useState<typeof destinations[0] | null>(null)
+  const [dialogOpen, setDialogOpen] = useState(false)
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {destinations.map((d) => (
-            <a
-              key={d.en}
-              href="#contact"
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
-            >
+  const handleDestinationClick = (destination: typeof destinations[0]) => {
+    setSelectedDestination(destination)
+    setDialogOpen(true)
+  }
+
+  return (
+    <>
+      <section id="destinations" className="py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="mb-12 flex flex-col items-center text-center">
+            <span className="mb-3 rounded-full bg-accent/15 px-4 py-1.5 text-sm font-medium text-accent-foreground">
+              وجهاتنا السياحية
+            </span>
+            <h2 className="font-heading text-3xl font-bold text-balance md:text-4xl">
+              اكتشف أجمل وجهات آسيا والعالم
+            </h2>
+            <p className="mt-4 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
+              باقات سياحية متكاملة تشمل الطيران والإقامة والجولات، مصممة خصيصاً لتناسب العائلة العربية.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {destinations.map((d) => (
+              <button
+                key={d.en}
+                onClick={() => handleDestinationClick(d)}
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl cursor-pointer text-left"
+              >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={d.img || "/placeholder.svg"}
@@ -59,11 +72,18 @@ export function Destinations() {
                     <ArrowLeft className="h-5 w-5 -translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
                   </div>
                 </div>
-              </div>
-            </a>
-          ))}
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <DestinationBookingDialog
+        destination={selectedDestination}
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+      />
+    </>
   )
 }
