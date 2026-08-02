@@ -43,14 +43,15 @@ export function Hero() {
           <Button
             size="lg"
             variant="outline"
+            nativeButton={false}
             className="rounded-full border-white/40 bg-white/10 px-8 text-base font-semibold text-white backdrop-blur hover:bg-white/20 hover:text-white"
-            asChild
-          >
-            <a href="#destinations">
-              <MapPin className="h-5 w-5" />
-              تصفّح الوجهات
-            </a>
-          </Button>
+            render={
+              <a href="#destinations">
+                <MapPin className="h-5 w-5" />
+                تصفّح الوجهات
+              </a>
+            }
+          />
         </div>
 
         <dl className="mt-14 flex max-w-lg flex-wrap gap-x-10 gap-y-6">
