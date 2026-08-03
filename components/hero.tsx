@@ -19,7 +19,7 @@ const slides = [
   { src: "/dest-indonesia.png",   alt: "إندونيسيا بالي - الجنة الاستوائية" },
 ]
 
-const INTERVAL = 5000 // ms between slides
+const INTERVAL = 10000 // ms between slides
 
 export function Hero() {
   const [current, setCurrent] = useState(0)
