@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import { MapPin, Plane, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -7,16 +10,88 @@ const stats = [
   { value: "+50k", label: "مسافر سعيد" },
 ]
 
+const slides = [
+  { src: "/hero-tropical.png",    alt: "جزيرة استوائية بمياه فيروزية عند غروب الشمس" },
+  { src: "/dest-maldives.png",    alt: "المالديف - جزر فيروزية فريدة" },
+  { src: "/dest-malaysia.png",    alt: "ماليزيا - ناطحات السحاب ومناظر خلابة" },
+  { src: "/dest-thailand.png",    alt: "تايلاند - معابد وشواطئ رائعة" },
+  { src: "/dest-turkey.png",      alt: "تركيا - مزيج التاريخ والطبيعة" },
+  { src: "/dest-indonesia.png",   alt: "إندونيسيا بالي - الجنة الاستوائية" },
+]
+
+const INTERVAL = 10000 // ms between slides
+
 export function Hero() {
+  const [current, setCurrent] = useState(0)
+  const [prev, setPrev] = useState<number | null>(null)
+  const [fading, setFading] = useState(false)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPrev(current)
+      setFading(true)
+      setCurrent((c) => (c + 1) % slides.length)
+    }, INTERVAL)
+    return () => clearInterval(timer)
+  }, [current])
+
+  // once the new image has faded in, clear the prev layer
+  useEffect(() => {
+    if (!fading) return
+    const t = setTimeout(() => {
+      setPrev(null)
+      setFading(false)
+    }, 900)
+    return () => clearTimeout(t)
+  }, [fading])
+
   return (
     <section id="home" className="relative min-h-[100svh] w-full overflow-hidden">
+
+      {/* Previous slide — stays visible while new one fades in */}
+      {prev !== null && (
+        <img
+          key={`prev-${prev}`}
+          src={slides[prev].src}
+          alt={slides[prev].alt}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
+
+      {/* Current slide — fades in over the previous */}
       <img
-        src="/hero-tropical.png"
-        alt="جزيرة استوائية بمياه فيروزية عند غروب الشمس"
-        className="absolute inset-0 h-full w-full object-cover"
+        key={`curr-${current}`}
+        src={slides[current].src}
+        alt={slides[current].alt}
+        className="absolute inset-0 h-full w-full object-cover transition-opacity duration-[900ms] ease-in-out"
+        style={{ opacity: fading ? 1 : 1, animation: "heroFadeIn 0.9s ease-in-out" }}
       />
+
+      {/* Gradient overlay — same as before */}
       <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.03_220_/_0.85)] via-[oklch(0.22_0.03_220_/_0.45)] to-[oklch(0.22_0.03_220_/_0.55)]" />
 
+      {/* Dot indicators */}
+      <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            aria-label={`الانتقال إلى الشريحة ${i + 1}`}
+            onClick={() => {
+              setPrev(current)
+              setFading(true)
+              setCurrent(i)
+            }}
+            className={[
+              "h-1.5 rounded-full transition-all duration-300",
+              i === current
+                ? "w-6 bg-white"
+                : "w-1.5 bg-white/40 hover:bg-white/70",
+            ].join(" ")}
+          />
+        ))}
+      </div>
+
+      {/* Content — unchanged */}
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-4 pb-16 pt-28 md:px-6">
         <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-sm font-medium text-white backdrop-blur">
           <Star className="h-4 w-4 fill-accent text-accent" />
@@ -65,6 +140,13 @@ export function Hero() {
           ))}
         </dl>
       </div>
+
+      <style>{`
+        @keyframes heroFadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+      `}</style>
     </section>
   )
 }
