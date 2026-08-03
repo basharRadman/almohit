@@ -28,10 +28,8 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-background/90 shadow-sm backdrop-blur-md"
-          : "bg-transparent",
+        "fixed inset-x-0 top-0 z-50 bg-gradient-to-b from-[oklch(0.22_0.03_220_/_0.6)] to-[oklch(0.22_0.03_220_/_0.35)] backdrop-blur-sm transition-all duration-300",
+        scrolled && "bg-background/90 shadow-sm backdrop-blur-md",
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
