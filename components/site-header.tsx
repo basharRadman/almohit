@@ -32,12 +32,12 @@ export function SiteHeader() {
         scrolled && "bg-background/90 shadow-sm backdrop-blur-md",
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-2.5 sm:gap-4 sm:px-4 sm:py-3 md:px-6">
-        <a href="#home" className="flex min-w-0 items-center gap-2">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-2 overflow-hidden px-3 py-2 sm:gap-4 sm:px-5 sm:py-3 md:px-6">
+        <a href="#home" className="flex min-w-0 shrink items-center gap-2">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md sm:h-10 sm:w-10 sm:rounded-xl">
             <WaveMark />
           </span>
-          <span className="flex min-w-0 flex-col leading-tight">
+          <span className="flex min-w-0 flex-col overflow-hidden leading-tight">
             <span
               className={cn(
                 "truncate font-heading text-sm font-extrabold transition-colors sm:text-base lg:text-lg",
@@ -48,7 +48,7 @@ export function SiteHeader() {
             </span>
             <span
               className={cn(
-                "hidden text-[10px] font-medium tracking-wide transition-colors sm:block",
+                "hidden truncate text-[10px] font-medium tracking-wide transition-colors sm:block",
                 scrolled ? "text-muted-foreground" : "text-white/75",
               )}
             >
