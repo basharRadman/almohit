@@ -32,15 +32,15 @@ export function SiteHeader() {
         scrolled && "bg-background/90 shadow-sm backdrop-blur-md",
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <a href="#home" className="flex items-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-md">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-2 overflow-hidden px-3 py-2 sm:gap-4 sm:px-5 sm:py-3 md:px-6">
+        <a href="#home" className="flex min-w-0 shrink items-center gap-2">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md sm:h-10 sm:w-10 sm:rounded-xl">
             <WaveMark />
           </span>
-          <span className="flex flex-col leading-tight">
+          <span className="flex min-w-0 flex-col overflow-hidden leading-tight">
             <span
               className={cn(
-                "font-heading text-lg font-extrabold transition-colors",
+                "truncate font-heading text-sm font-extrabold transition-colors sm:text-base lg:text-lg",
                 scrolled ? "text-foreground" : "text-white",
               )}
             >
@@ -48,8 +48,8 @@ export function SiteHeader() {
             </span>
             <span
               className={cn(
-                "text-[11px] font-medium tracking-wide transition-colors",
-                scrolled ? "text-muted-foreground" : "text-white/80",
+                "hidden truncate text-[10px] font-medium tracking-wide transition-colors sm:block",
+                scrolled ? "text-muted-foreground" : "text-white/75",
               )}
             >
               Almohit Travel & Tours
@@ -95,13 +95,13 @@ export function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
           aria-label="القائمة"
           className={cn(
-            "flex h-11 w-11 items-center justify-center rounded-xl transition-colors lg:hidden",
+            "flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors sm:h-10 sm:w-10 sm:rounded-xl lg:hidden",
             scrolled
               ? "bg-secondary text-foreground"
               : "bg-white/15 text-white backdrop-blur",
           )}
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
         </button>
       </div>
 
