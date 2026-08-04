@@ -28,12 +28,14 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 bg-gradient-to-b from-[oklch(0.22_0.03_220_/_0.6)] to-[oklch(0.22_0.03_220_/_0.35)] backdrop-blur-sm transition-all duration-300",
-        scrolled && "bg-background/90 shadow-sm backdrop-blur-md",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        scrolled
+          ? "bg-background/95 shadow-sm backdrop-blur-md"
+          : "bg-gradient-to-b from-black/50 to-black/20 backdrop-blur-sm",
       )}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-2 overflow-hidden px-3 py-2 sm:gap-4 sm:px-5 sm:py-3 md:px-6">
-        <a href="#home" className="flex min-w-0 shrink items-center gap-2">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-2 overflow-hidden px-3 py-2.5 sm:gap-4 sm:px-5 sm:py-3 md:px-6">
+        <a href="#home" className="flex min-w-0 shrink items-center gap-2 sm:gap-3">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md sm:h-10 sm:w-10 sm:rounded-xl">
             <WaveMark />
           </span>
@@ -49,7 +51,7 @@ export function SiteHeader() {
             <span
               className={cn(
                 "hidden truncate text-[10px] font-medium tracking-wide transition-colors sm:block",
-                scrolled ? "text-muted-foreground" : "text-white/75",
+                scrolled ? "text-muted-foreground" : "text-white/80",
               )}
             >
               Almohit Travel & Tours
@@ -101,7 +103,7 @@ export function SiteHeader() {
               : "bg-white/15 text-white backdrop-blur",
           )}
         >
-          {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          {open ? <X className="h-4 w-4 sm:h-5 sm:w-5" /> : <Menu className="h-4 w-4 sm:h-5 sm:w-5" />}
         </button>
       </div>
 
