@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react"
 import { MapPin, Plane, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 const stats = [
   { value: "+15", label: "سنة خبرة" },
@@ -115,18 +116,16 @@ export function Hero() {
             <Plane className="h-5 w-5" />
             احجز رحلتك الآن
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            nativeButton={false}
-            className="rounded-full border-white/40 bg-white/10 px-8 text-base font-semibold text-white backdrop-blur hover:bg-white/20 hover:text-white"
-            render={
-              <a href="#destinations">
-                <MapPin className="h-5 w-5" />
-                تصفّح الوجهات
-              </a>
-            }
-          />
+          <a
+            href="#destinations"
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "rounded-full border-white/40 bg-white/10 px-8 text-base font-semibold text-white backdrop-blur hover:bg-white/20 hover:text-white",
+            )}
+          >
+            <MapPin className="h-5 w-5" />
+            تصفّح الوجهات
+          </a>
         </div>
 
         <dl className="mt-14 flex max-w-lg flex-wrap gap-x-10 gap-y-6">
