@@ -1,5 +1,6 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 import { PhoneCall, MessageCircle } from "lucide-react"
 
 export function CTA() {
@@ -23,29 +24,28 @@ export function CTA() {
               تواصل معنا اليوم واحصل على عرض سعر مخصص لرحلتك خلال دقائق. فريقنا في انتظارك.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button
-                size="lg"
-                nativeButton={false}
-                className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90"
-                render={
-                  <a href="https://wa.me/905000000000" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="h-5 w-5" />
-                    تواصل عبر واتساب
-                  </a>
-                }
-              />
-              <Button
-                size="lg"
-                variant="outline"
-                nativeButton={false}
-                className="gap-2 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                render={
-                  <a href="tel:+905000000000">
-                    <PhoneCall className="h-5 w-5" />
-                    اتصل بنا الآن
-                  </a>
-                }
-              />
+              <a
+                href="https://wa.me/905000000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "gap-2 bg-accent text-accent-foreground hover:bg-accent/90",
+                )}
+              >
+                <MessageCircle className="h-5 w-5" />
+                تواصل عبر واتساب
+              </a>
+              <a
+                href="tel:+905000000000"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "gap-2 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground",
+                )}
+              >
+                <PhoneCall className="h-5 w-5" />
+                اتصل بنا الآن
+              </a>
             </div>
           </div>
         </div>

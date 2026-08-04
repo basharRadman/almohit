@@ -66,7 +66,7 @@ export function Testimonials() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative">
+        <div className="relative px-10 md:px-14">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {visibleTestimonials.map((t) => (
               <div
@@ -96,14 +96,14 @@ export function Testimonials() {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
-            className="absolute -left-12 top-1/2 -translate-y-1/2 rounded-full bg-secondary p-2 text-foreground/70 transition-colors hover:bg-secondary hover:text-foreground md:-left-16"
+            className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full border border-border bg-card p-2.5 text-foreground/70 shadow-sm transition-colors hover:bg-secondary hover:text-foreground"
             aria-label="السابق"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
           <button
             onClick={handleNext}
-            className="absolute -right-12 top-1/2 -translate-y-1/2 rounded-full bg-secondary p-2 text-foreground/70 transition-colors hover:bg-secondary hover:text-foreground md:-right-16"
+            className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full border border-border bg-card p-2.5 text-foreground/70 shadow-sm transition-colors hover:bg-secondary hover:text-foreground"
             aria-label="التالي"
           >
             <ChevronLeft className="h-5 w-5" />
