@@ -32,15 +32,15 @@ export function SiteHeader() {
         scrolled && "bg-background/90 shadow-sm backdrop-blur-md",
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <a href="#home" className="flex items-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-4 md:px-6">
+        <a href="#home" className="flex min-w-0 items-center gap-2 sm:gap-3">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-md sm:h-11 sm:w-11">
             <WaveMark />
           </span>
-          <span className="flex flex-col leading-tight">
+          <span className="flex min-w-0 flex-col leading-tight">
             <span
               className={cn(
-                "font-heading text-lg font-extrabold transition-colors",
+                "truncate font-heading text-base font-extrabold transition-colors sm:text-lg",
                 scrolled ? "text-foreground" : "text-white",
               )}
             >
@@ -48,7 +48,7 @@ export function SiteHeader() {
             </span>
             <span
               className={cn(
-                "text-[11px] font-medium tracking-wide transition-colors",
+                "hidden text-[11px] font-medium tracking-wide transition-colors sm:block",
                 scrolled ? "text-muted-foreground" : "text-white/80",
               )}
             >
@@ -95,7 +95,7 @@ export function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
           aria-label="القائمة"
           className={cn(
-            "flex h-11 w-11 items-center justify-center rounded-xl transition-colors lg:hidden",
+            "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-colors sm:h-11 sm:w-11 lg:hidden",
             scrolled
               ? "bg-secondary text-foreground"
               : "bg-white/15 text-white backdrop-blur",

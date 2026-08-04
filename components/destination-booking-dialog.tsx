@@ -242,7 +242,7 @@ export function DestinationBookingDialog({
       <div className="space-y-0">
 
         {/* Hero Photo Slider */}
-        <div className="relative -mx-5 mb-5 h-56 overflow-hidden rounded-t-2xl sm:-mx-7 sm:h-72">
+        <div className="relative -mx-4 mb-5 h-52 overflow-hidden rounded-t-2xl sm:-mx-6 sm:h-68">
           {photos.map((src, idx) => (
             <Image
               key={src}
@@ -322,21 +322,21 @@ export function DestinationBookingDialog({
 
         <div className="space-y-6 pb-2">
           {/* Quick stats */}
-          <div className="grid grid-cols-3 gap-3">
-            <div className="flex flex-col items-center gap-1 rounded-xl bg-secondary/60 px-3 py-3 text-center">
-              <Thermometer className="h-5 w-5 text-primary" />
-              <span className="text-xs text-muted-foreground">المناخ</span>
-              <span className="text-sm font-semibold leading-tight">{info.climate}</span>
+          <div className="grid grid-cols-3 gap-2">
+            <div className="flex flex-col items-center gap-1 rounded-xl bg-secondary/60 px-2 py-3 text-center">
+              <Thermometer className="h-4 w-4 text-primary sm:h-5 sm:w-5" />
+              <span className="text-[10px] text-muted-foreground sm:text-xs">المناخ</span>
+              <span className="text-xs font-semibold leading-tight sm:text-sm">{info.climate}</span>
             </div>
-            <div className="flex flex-col items-center gap-1 rounded-xl bg-secondary/60 px-3 py-3 text-center">
-              <Sun className="h-5 w-5 text-accent" />
-              <span className="text-xs text-muted-foreground">أفضل وقت</span>
-              <span className="text-sm font-semibold leading-tight">{info.bestTime}</span>
+            <div className="flex flex-col items-center gap-1 rounded-xl bg-secondary/60 px-2 py-3 text-center">
+              <Sun className="h-4 w-4 text-accent sm:h-5 sm:w-5" />
+              <span className="text-[10px] text-muted-foreground sm:text-xs">أفضل وقت</span>
+              <span className="text-xs font-semibold leading-tight sm:text-sm">{info.bestTime}</span>
             </div>
-            <div className="flex flex-col items-center gap-1 rounded-xl bg-secondary/60 px-3 py-3 text-center">
-              <Plane className="h-5 w-5 text-primary" />
-              <span className="text-xs text-muted-foreground">وقت الرحلة</span>
-              <span className="text-sm font-semibold leading-tight">{info.flightTime}</span>
+            <div className="flex flex-col items-center gap-1 rounded-xl bg-secondary/60 px-2 py-3 text-center">
+              <Plane className="h-4 w-4 text-primary sm:h-5 sm:w-5" />
+              <span className="text-[10px] text-muted-foreground sm:text-xs">وقت الرحلة</span>
+              <span className="text-xs font-semibold leading-tight sm:text-sm">{info.flightTime}</span>
             </div>
           </div>
 
@@ -370,14 +370,14 @@ export function DestinationBookingDialog({
                 <MapPin className="h-4 w-4 text-primary" />
                 أبرز الأماكن السياحية
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 {info.places.map((place) => (
                   <div
                     key={place.name}
                     className="overflow-hidden rounded-xl border border-border bg-card"
                   >
                     {/* Place photo */}
-                    <div className="relative h-28 w-full">
+                    <div className="relative h-24 w-full sm:h-28">
                       <Image
                         src={place.img}
                         alt={place.name}
@@ -387,10 +387,10 @@ export function DestinationBookingDialog({
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     </div>
                     {/* Place name + badge */}
-                    <div className="flex items-center justify-between px-3 py-2.5">
-                      <span className="text-sm font-medium">{place.name}</span>
+                    <div className="flex items-center justify-between gap-1 px-2 py-2 sm:px-3 sm:py-2.5">
+                      <span className="truncate text-xs font-medium sm:text-sm">{place.name}</span>
                       <span
-                        className={`rounded-full px-2 py-0.5 text-xs font-medium ${
+                        className={`shrink-0 rounded-full px-1.5 py-0.5 text-[10px] font-medium sm:px-2 sm:text-xs ${
                           placeTypeColors[place.type] ?? 'bg-muted text-muted-foreground'
                         }`}
                       >
@@ -404,7 +404,7 @@ export function DestinationBookingDialog({
           )}
 
           {/* Programs CTA */}
-          <div className="flex items-center justify-between rounded-xl bg-secondary px-5 py-4">
+          <div className="flex flex-col gap-3 rounded-xl bg-secondary px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5">
             <div>
               <p className="text-sm text-muted-foreground">البرامج المتاحة</p>
               <p className="font-heading text-2xl font-bold text-primary">
@@ -414,7 +414,7 @@ export function DestinationBookingDialog({
             </div>
             <button
               onClick={() => onOpenChange(false)}
-              className="flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto"
             >
               استعرض البرامج
               <ArrowLeft className="h-4 w-4" />
