@@ -34,7 +34,7 @@ export function SiteHeader() {
           : "bg-gradient-to-b from-black/50 to-black/20 backdrop-blur-sm",
       )}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-2 overflow-hidden px-3 py-2.5 sm:gap-4 sm:px-4 sm:py-3 md:px-6">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-2 overflow-hidden px-3 py-2.5 sm:gap-4 sm:px-5 sm:py-3 md:px-6">
         <a href="#home" className="flex min-w-0 shrink items-center gap-2 sm:gap-3">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-md sm:h-10 sm:w-10 sm:rounded-xl">
             <WaveMark />
