@@ -145,7 +145,7 @@ const destinationData: Record<
   rating: 4.6,
   highlights: ['خليج هالونج', 'مدينة هوي أن', 'مدرجات الأرز', 'المطبخ الشهير'],
   photos: [
-    'https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=900&q=80',
+    '/dest-vietnam.png?w=900&q=80',
     'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80',
     'https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=900&q=80',
     'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=900&q=80',
