@@ -214,10 +214,10 @@ Egypt: {
     'https://images.unsplash.com/photo-1572252821143-02591603597d?w=900&q=80',
   ],
   places: [
-    { name: 'القاهرة والأهرامات', type: 'تراث', img: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=75', video: 'https://www.youtube.com/embed/3Q9f538x090' },
-    { name: 'الأقصر', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=400&q=75', video: 'https://www.youtube.com/embed/5a4Z2y60oZk' },
-    { name: 'أسوان', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=75', video: 'https://www.youtube.com/embed/34N5G32791o' },
-    { name: 'شرم الشيخ', type: 'ترفيه', img: 'https://images.unsplash.com/photo-1572252821143-02591603597d?w=400&q=75', video: 'https://www.youtube.com/embed/9X5433x090z' },
+    { name: 'القاهرة والأهرامات', type: 'تراث', img: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=75', video: 'https://www.youtube.com/embed/o05XN34-M7g' },
+    { name: 'الأقصر', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=400&q=75', video: 'https://www.youtube.com/embed/P52u2t_F_mY' },
+    { name: 'أسوان', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=75', video: 'https://www.youtube.com/embed/V6dK6iQ4p1E' },
+    { name: 'شرم الشيخ', type: 'ترفيه', img: 'https://images.unsplash.com/photo-1572252821143-02591603597d?w=400&q=75', video: 'https://www.youtube.com/embed/bL7L3K5QJpU' },
   ],
 },
 China: {
