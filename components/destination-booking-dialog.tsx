@@ -214,10 +214,10 @@ Egypt: {
     'https://images.unsplash.com/photo-1572252821143-02591603597d?w=900&q=80',
   ],
   places: [
-    { name: 'القاهرة والأهرامات', type: 'تراث', img: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=75', video: 'https://www.youtube.com/embed/o05XN34-M7g' },
-    { name: 'الأقصر', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=400&q=75', video: 'https://www.youtube.com/embed/P52u2t_F_mY' },
-    { name: 'أسوان', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=75', video: 'https://www.youtube.com/embed/V6dK6iQ4p1E' },
-    { name: 'شرم الشيخ', type: 'ترفيه', img: 'https://images.unsplash.com/photo-1572252821143-02591603597d?w=400&q=75', video: 'https://www.youtube.com/embed/bL7L3K5QJpU' },
+    { name: 'القاهرة والأهرامات', type: 'تراث', img: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=75', video: 'https://www.youtube.com/embed/BapSQFJPMM0' },
+    { name: 'الأقصر', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=400&q=75', video: 'https://www.youtube.com/embed/l_Np9vgYcg0' },
+    { name: 'أسوان', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=75', video: 'https://www.youtube.com/embed/zDUccHozBww' },
+    { name: 'شرم الشيخ', type: 'ترفيه', img: 'https://images.unsplash.com/photo-1572252821143-02591603597d?w=400&q=75', video: 'https://www.youtube.com/embed/4AaQkXIAebw' },
   ],
 },
 China: {
@@ -235,10 +235,10 @@ China: {
     'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=900&q=80',
   ],
   places: [
-    { name: 'بكين', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=400&q=75', video: 'https://www.youtube.com/embed/5a4Z2y60oZk' },
-    { name: 'شانغهاي', type: 'مدينة', img: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=400&q=75', video: 'https://www.youtube.com/embed/3Q9f538x090' },
-    { name: 'تشانغجياجيه', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=400&q=75', video: 'https://www.youtube.com/embed/34N5G32791o' },
-    { name: 'شيآن', type: 'تراث', img: 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=400&q=75', video: 'https://www.youtube.com/embed/9X5433x090z' },
+    { name: 'بكين', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=400&q=75', video: 'https://www.youtube.com/embed/1WBTZrJSQZA' },
+    { name: 'شانغهاي', type: 'مدينة', img: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=400&q=75', video: 'https://www.youtube.com/embed/RqO7uq8_Qsc' },
+    { name: 'تشانغجياجيه', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=400&q=75', video: 'https://www.youtube.com/embed/MIWXK7fPRTY' },
+    { name: 'شيآن', type: 'تراث', img: 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=400&q=75', video: 'https://www.youtube.com/embed/K5ifj5DrtpI' },
   ],
 },
 Russia: {
@@ -256,10 +256,10 @@ Russia: {
     'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=900&q=80',
   ],
   places: [
-    { name: 'موسكو', type: 'العاصمة', img: 'https://images.unsplash.com/photo-1513326718677-b9e44ea7463f?w=400&q=75', video: 'https://www.youtube.com/embed/5a4Z2y60oZk' },
-    { name: 'سانت بطرسبرغ', type: 'تراث', img: 'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=400&q=75', video: 'https://www.youtube.com/embed/3Q9f538x090' },
+    { name: 'موسكو', type: 'العاصمة', img: 'https://images.unsplash.com/photo-1513326718677-b9e44ea7463f?w=400&q=75', video: 'https://www.youtube.com/embed/7TWxSzf-gI8' },
+    { name: 'سانت بطرسبرغ', type: 'تراث', img: 'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=400&q=75', video: 'https://www.youtube.com/embed/zUEj7cm25XE' },
     { name: 'بحيرة بايكال', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=400&q=75', video: 'https://www.youtube.com/embed/34N5G32791o' },
-    { name: 'كازان', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=75', video: 'https://www.youtube.com/embed/9X5433x090z' },
+    { name: 'كازان', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=75', video: 'https://www.youtube.com/embed/mGZ8OP1urIs' },
   ],
 },
 Britain: {
@@ -277,10 +277,10 @@ Britain: {
     'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=900&q=80',
   ],
   places: [
-    { name: 'لندن', type: 'العاصمة', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=75', video: 'https://www.youtube.com/embed/5a4Z2y60oZk' },
-    { name: 'إدنبرة', type: 'تراث', img: 'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=400&q=75', video: 'https://www.youtube.com/embed/3Q9f538x090' },
-    { name: 'مانشستر', type: 'مدينة', img: 'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=400&q=75', video: 'https://www.youtube.com/embed/34N5G32791o' },
-    { name: 'أوكسفورد', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=400&q=75', video: 'https://www.youtube.com/embed/9X5433x090z' },
+    { name: 'لندن', type: 'العاصمة', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=75', video: 'https://www.youtube.com/embed/jmoPo11ktN4' },
+    { name: 'إدنبرة', type: 'تراث', img: 'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=400&q=75', video: 'https://www.youtube.com/embed/SRNyfBRhq0A' },
+    { name: 'مانشستر', type: 'مدينة', img: 'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=400&q=75', video: 'https://www.youtube.com/embed/vGMABqZDGE8' },
+    { name: 'أوكسفورد', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=400&q=75', video: 'https://www.youtube.com/embed/pa5JMF-A97E' },
   ],
 },
 
