@@ -181,22 +181,42 @@ const destinationData: Record<
 Singapore: {
   description:
     'سنغافورة مدينة المستقبل حيث تلتقي ناطحات السحاب بالحدائق الخضراء والمطبخ العالمي والتجارب الترفيهية الأكثر إبهاراً في آسيا.',
-  climate: 'استوائي معتدل',
+   climate: 'استوائي معتدل',
   bestTime: 'طوال العام',
   flightTime: '7.5 ساعة',
   rating: 4.8,
   highlights: ['حدائق الشجرة', 'أوركيد جاردن', 'مارينا باي', 'يونيفرسال ستوديوز'],
   photos: [
-    'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80',
-    'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=900&q=80',
-    'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=900&q=80',
-    'https://unsplash.com/photos-a-pool-surrounded-by-trees-and-a-body-of-water-Thtqvl-VKKA?w=900&q=80',
+    'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80', 
+    'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=900&q=80', 
+    'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=900&q=80', 
+    'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=900&q=80', 
   ],
   places: [
-    { name: 'مارينا باي', type: 'معالم', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&q=75', video: 'https://www.youtube.com/embed/3nA0vQWiI28' },
-    { name: 'حديقة الطيور', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=400&q=75', video: 'https://www.youtube.com/embed/JeJtrrRxE-k' },
-    { name: 'سنتوسا', type: 'ترفيه', img: 'https://unsplash.com/photos-a-pool-surrounded-by-trees-and-a-body-of-water-Thtqvl-VKKA?w=400&q=75', video: 'https://www.youtube.com/embed/3BT-0_dJVwQ' },
-    { name: 'شارع العرب', type: 'تراث', img: 'https://unsplash.com/photos-street-view-of-singapore-with-masjid-sultan-BL4KVQWV8-Q?w=400&q=75', video: 'https://www.youtube.com/embed/PKVnTMUPI3k' },
+    { 
+      name: 'مارينا باي', 
+      type: 'معالم', 
+      img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/3nA0vQWiI28' 
+    },
+    { 
+      name: 'حديقة الطيور', 
+      type: 'طبيعة', 
+      img: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/JeJtrrRxE-k' 
+    },
+    { 
+      name: 'سنتوسا', 
+      type: 'ترفيه', 
+      img: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/3BT-0_dJVwQ' 
+    },
+    { 
+      name: 'شارع العرب', 
+      type: 'تراث', 
+      img: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/PKVnTMUPI3k' 
+    },
   ],
 },
 Egypt: {
@@ -208,16 +228,36 @@ Egypt: {
   rating: 4.7,
   highlights: ['أهرامات الجيزة', 'رحلات النيل', 'الغردقة وشرم الشيخ', 'المتحف المصري الكبير'],
   photos: [
-    'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=900&q=80',
-    'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=900&q=80',
-    'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=900&q=80',
-    'https://unsplash.com/photos/beach-on-the-corniche-in-jeddah-saudi-arabia-omuPUOJ2Hy0',
+    'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=900&q=80', // القاهرة والأهرامات
+    'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=900&q=80', // الأقصر
+    'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=900&q=80', // أسوان
+    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80', // شرم الشيخ
   ],
   places: [
-    { name: 'القاهرة والأهرامات', type: 'تراث', img: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=75', video: 'https://www.youtube.com/embed/BapSQFJPMM0' },
-    { name: 'الأقصر', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=400&q=75', video: 'https://www.youtube.com/embed/l_Np9vgYcg0' },
-    { name: 'أسوان', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=75', video: 'https://www.youtube.com/embed/zDUccHozBww' },
-    { name: 'شرم الشيخ', type: 'ترفيه', img: 'https://unsplash.com/photos-beach-on-the-corniche-in-jeddah-saudi-arabia-omuPUOJ2Hy0?w=400&q=75', video: 'https://www.youtube.com/embed/4AaQkXIAebw' },
+    { 
+      name: 'القاهرة والأهرامات', 
+      type: 'تراث', 
+      img: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/BapSQFJPMM0' 
+    },
+    { 
+      name: 'الأقصر', 
+      type: 'تاريخ', 
+      img: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/l_Np9vgYcg0' 
+    },
+    { 
+      name: 'أسوان', 
+      type: 'طبيعة', 
+      img: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/zDUccHozBww' 
+    },
+    { 
+      name: 'شرم الشيخ', 
+      type: 'ترفيه', 
+      img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/4AaQkXIAebw' 
+    },
   ],
 },
 China: {
@@ -243,23 +283,43 @@ China: {
 },
 Russia: {
   description:
-    'روسيا امبراطورية التنوع والحجم الهائل، تجمع بين الساحة الحمراء والقصور الملكية الفخمة في وسحر الشفق القطبي وقطار السكك الحديدية العابرة لسيبيريا.',
+    'روسيا امبراطورية التنوع والحجم الهائل، تجمع بين الساحة الحمراء والقصور الملكية الفخمة وسحر الشفق القطبي وقطار السكك الحديدية العابرة لسيبيريا.',
   climate: 'قاري بارد',
   bestTime: 'مايو – سبتمبر',
   flightTime: '5.5 ساعة',
   rating: 4.6,
   highlights: ['الساحة الحمراء', 'قصر بيترهوف', 'متحف هيرميتاج', 'بحيرة بايكال'],
   photos: [
-    'https://images.unsplash.com/photo-1513326718677-b9e44ea7463f?w=900&q=80',
-    'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=900&q=80',
-    'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=900&q=80',
-    'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=900&q=80',
+    'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=900&q=80', // موسكو / الساحة الحمراء
+    'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=900&q=80', // سانت بطرسبرغ
+    'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=900&q=80', // بحيرة بايكال
+    'https://images.unsplash.com/photo-1578637387939-43c525550085?w=900&q=80', // كازان
   ],
   places: [
-    { name: 'موسكو', type: 'العاصمة', img: 'https://images.unsplash.com/photo-1513326718677-b9e44ea7463f?w=400&q=75', video: 'https://www.youtube.com/embed/7TWxSzf-gI8' },
-    { name: 'سانت بطرسبرغ', type: 'تراث', img: 'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=400&q=75', video: 'https://www.youtube.com/embed/zUEj7cm25XE' },
-    { name: 'بحيرة بايكال', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=400&q=75', video: 'https://www.youtube.com/embed/34N5G32791o' },
-    { name: 'كازان', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=75', video: 'https://www.youtube.com/embed/mGZ8OP1urIs' },
+    { 
+      name: 'موسكو', 
+      type: 'العاصمة', 
+      img: 'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/7TWxSzf-gI8' 
+    },
+    { 
+      name: 'سانت بطرسبرغ', 
+      type: 'تراث', 
+      img: 'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/zUEj7cm25XE' 
+    },
+    { 
+      name: 'بحيرة بايكال', 
+      type: 'طبيعة', 
+      img: 'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/34N5G32791o' 
+    },
+    { 
+      name: 'كازان', 
+      type: 'ثقافة', 
+      img: 'https://images.unsplash.com/photo-1578637387939-43c525550085?w=400&q=75', 
+      video: 'https://www.youtube.com/embed/mGZ8OP1urIs' 
+    },
   ],
 },
 Britain: {
