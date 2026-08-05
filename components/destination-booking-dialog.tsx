@@ -151,7 +151,7 @@ const destinationData: Record<
     'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=900&q=80',
   ],
   places: [
-    { name: 'خليج هالونج', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=75', video: 'https://www.youtube.com/embed/XRUw6-GoS24' },
+    { name: 'خليج هالونج', type: 'طبيعة', img: '/dest-vietnam.png?w=400&q=75', video: 'https://www.youtube.com/embed/XRUw6-GoS24' },
     { name: 'هانوي', type: 'مدينة', img: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=75', video: 'https://www.youtube.com/embed/6yKlTn-LBFU' },
     { name: 'هوشيمن', type: 'مدينة', img: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=75', video: 'https://www.youtube.com/embed/D7F6pTXmvWw' },
     { name: 'هوي أن', type: 'تراث', img: 'https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=400&q=75', video: 'https://www.youtube.com/embed/owz2JyWMwkE' },
