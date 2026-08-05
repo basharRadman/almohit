@@ -15,6 +15,9 @@ const destinations = [
   { name: "سريلانكا", en: "Sri Lanka", img: "/dest-srilanka.png", trips: 10, tag: null },
   { name: "سنغافورة", en: "Singapore", img: "/dest-singapore.png", trips: 14, tag: null },
   { name: "مصر", en: "Egypt", img: "/dest-egypt.png", trips: 16, tag: null },
+  { name: "الصين", en: "China", img: "/dest-china.png", trips: 16, tag: null },
+  { name: "روسيا", en: "Russia", img: "/dest-russia.png", trips: 16, tag: null },
+  { name: "بريطانيا", en: "Britain", img: "/dest-britain.png", trips: 16, tag: null },
 ]
 
 export function Destinations() {

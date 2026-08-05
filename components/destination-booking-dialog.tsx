@@ -73,7 +73,7 @@ const destinationData: Record<
     { name: 'كاميرون هايلاندز', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75', video: 'https://www.youtube.com/embed/L7mHvwO91TQ' },
   ],
 },
-  Thailand: {
+ Thailand: {
   description:
     'تايلاند أرض الابتسامة تسحرك بمعابدها الذهبية الباذخة وشواطئها الكريستالية وثقافتها العريقة ومطبخها الشهير عالمياً.',
   climate: 'استوائي حار',
@@ -220,6 +220,70 @@ Egypt: {
     { name: 'شرم الشيخ', type: 'ترفيه', img: 'https://images.unsplash.com/photo-1572252821143-02591603597d?w=400&q=75', video: 'https://www.youtube.com/embed/9X5433x090z' },
   ],
 },
+China: {
+  description:
+    'الصين أرض التناقضات المذهلة، تجمع بين سور الصين العظيم والتاريخ الإمبراطوري العريق وناطحات السحاب المستقبلية والمناظر الطبيعية الساحرة.',
+  climate: 'متنوع (معتدل إلى قاري)',
+  bestTime: 'سبتمبر – نوفمبر',
+  flightTime: '9 ساعات',
+  rating: 4.7,
+  highlights: ['سور الصين العظيم', 'المدينة المحرمة', 'جيش التيراكوتا', 'جبال تشانغجياجيه'],
+  photos: [
+    'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=900&q=80',
+    'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=900&q=80',
+    'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=900&q=80',
+    'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=900&q=80',
+  ],
+  places: [
+    { name: 'بكين', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=400&q=75', video: 'https://www.youtube.com/embed/5a4Z2y60oZk' },
+    { name: 'شانغهاي', type: 'مدينة', img: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=400&q=75', video: 'https://www.youtube.com/embed/3Q9f538x090' },
+    { name: 'تشانغجياجيه', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=400&q=75', video: 'https://www.youtube.com/embed/34N5G32791o' },
+    { name: 'شيآن', type: 'تراث', img: 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=400&q=75', video: 'https://www.youtube.com/embed/9X5433x090z' },
+  ],
+},
+Russia: {
+  description:
+    'روسيا امبراطورية التنوع والحجم الهائل، تجمع بين الساحة الحمراء والقصور الملكية الفخمة في وسحر الشفق القطبي وقطار السكك الحديدية العابرة لسيبيريا.',
+  climate: 'قاري بارد',
+  bestTime: 'مايو – سبتمبر',
+  flightTime: '5.5 ساعة',
+  rating: 4.6,
+  highlights: ['الساحة الحمراء', 'قصر بيترهوف', 'متحف هيرميتاج', 'بحيرة بايكال'],
+  photos: [
+    'https://images.unsplash.com/photo-1513326718677-b9e44ea7463f?w=900&q=80',
+    'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=900&q=80',
+    'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=900&q=80',
+    'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=900&q=80',
+  ],
+  places: [
+    { name: 'موسكو', type: 'العاصمة', img: 'https://images.unsplash.com/photo-1513326718677-b9e44ea7463f?w=400&q=75', video: 'https://www.youtube.com/embed/5a4Z2y60oZk' },
+    { name: 'سانت بطرسبرغ', type: 'تراث', img: 'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=400&q=75', video: 'https://www.youtube.com/embed/3Q9f538x090' },
+    { name: 'بحيرة بايكال', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=400&q=75', video: 'https://www.youtube.com/embed/34N5G32791o' },
+    { name: 'كازان', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=75', video: 'https://www.youtube.com/embed/9X5433x090z' },
+  ],
+},
+Britain: {
+  description:
+    'بريطانيا عراقة التاريخ والرقي الملكي، تجمع بين سحر لندن الحديثة والتلال الخضراء الساحرة والقلوع الأثرية والثقافة العريقة.',
+  climate: 'معتدل محيطي',
+  bestTime: 'مايو – سبتمبر',
+  flightTime: '6.5 ساعة',
+  rating: 4.7,
+  highlights: ['برج ساعة بيغ بن', 'قصر باكنغهام', 'بحيرة لوخ نيس', 'مرتفعات أسط his السكوتلاندية'],
+  photos: [
+    'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80',
+    'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=900&q=80',
+    'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=900&q=80',
+    'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=900&q=80',
+  ],
+  places: [
+    { name: 'لندن', type: 'العاصمة', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=75', video: 'https://www.youtube.com/embed/5a4Z2y60oZk' },
+    { name: 'إدنبرة', type: 'تراث', img: 'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=400&q=75', video: 'https://www.youtube.com/embed/3Q9f538x090' },
+    { name: 'مانشستر', type: 'مدينة', img: 'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=400&q=75', video: 'https://www.youtube.com/embed/34N5G32791o' },
+    { name: 'أوكسفورد', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=400&q=75', video: 'https://www.youtube.com/embed/9X5433x090z' },
+  ],
+},
+
 };
 const placeTypeColors: Record<string, string> = {
   شاطئ: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
