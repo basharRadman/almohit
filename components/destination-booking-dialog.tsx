@@ -190,13 +190,13 @@ Singapore: {
     'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80',
     'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=900&q=80',
     'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=900&q=80',
-    'https://images.unsplash.com/photo-1559628233-100c798642d5?w=900&q=80',
+    'https://unsplash.com/photos/a-pool-surrounded-by-trees-and-a-body-of-water-Thtqvl-VKKA?w=900&q=80',
   ],
   places: [
     { name: 'مارينا باي', type: 'معالم', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&q=75', video: 'https://www.youtube.com/embed/3nA0vQWiI28' },
     { name: 'حديقة الطيور', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=400&q=75', video: 'https://www.youtube.com/embed/JeJtrrRxE-k' },
-    { name: 'سنتوسا', type: 'ترفيه', img: 'https://images.unsplash.com/photo-1559628233-100c798642d5?w=400&q=75', video: 'https://www.youtube.com/embed/3BT-0_dJVwQ' },
-    { name: 'شارع العرب', type: 'تراث', img: 'https://images.unsplash.com/photo-1569596082827-c5e8987ef9c4?w=400&q=75', video: 'https://www.youtube.com/embed/PKVnTMUPI3k' },
+    { name: 'سنتوسا', type: 'ترفيه', img: 'https://unsplash.com/photos/a-pool-surrounded-by-trees-and-a-body-of-water-Thtqvl-VKKA?w=400&q=75', video: 'https://www.youtube.com/embed/3BT-0_dJVwQ' },
+    { name: 'شارع العرب', type: 'تراث', img: 'https://unsplash.com/photos/street-view-of-singapore-with-masjid-sultan-BL4KVQWV8-Q?w=400&q=75', video: 'https://www.youtube.com/embed/PKVnTMUPI3k' },
   ],
 },
 Egypt: {
@@ -211,13 +211,13 @@ Egypt: {
     'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=900&q=80',
     'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=900&q=80',
     'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=900&q=80',
-    'https://images.unsplash.com/photo-1572252821143-02591603597d?w=900&q=80',
+    'https://unsplash.com/photos/beach-on-the-corniche-in-jeddah-saudi-arabia-omuPUOJ2Hy0?w=900&q=80',
   ],
   places: [
     { name: 'القاهرة والأهرامات', type: 'تراث', img: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=75', video: 'https://www.youtube.com/embed/BapSQFJPMM0' },
     { name: 'الأقصر', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=400&q=75', video: 'https://www.youtube.com/embed/l_Np9vgYcg0' },
     { name: 'أسوان', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=75', video: 'https://www.youtube.com/embed/zDUccHozBww' },
-    { name: 'شرم الشيخ', type: 'ترفيه', img: 'https://images.unsplash.com/photo-1572252821143-02591603597d?w=400&q=75', video: 'https://www.youtube.com/embed/4AaQkXIAebw' },
+    { name: 'شرم الشيخ', type: 'ترفيه', img: 'https://unsplash.com/photos/beach-on-the-corniche-in-jeddah-saudi-arabia-omuPUOJ2Hy0?w=400&q=75', video: 'https://www.youtube.com/embed/4AaQkXIAebw' },
   ],
 },
 China: {
