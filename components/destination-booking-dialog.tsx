@@ -199,6 +199,27 @@ Singapore: {
     { name: 'شارع العرب', type: 'تراث', img: 'https://images.unsplash.com/photo-1569596082827-c5e8987ef9c4?w=400&q=75', video: 'https://www.youtube.com/embed/PKVnTMUPI3k' },
   ],
 },
+Egypt: {
+  description:
+    'مصر أسطورة التاريخ ومهد الحضارات، تجمع بين سحر الأهرامات الخالدة ونهر النيل العظيم وعجائب البحر الأحمر وشوارع القاهرة النابضة بالحياة.',
+  climate: 'صحراوي جاف',
+  bestTime: 'أكتوبر – أبريل',
+  flightTime: '3.5 ساعة',
+  rating: 4.7,
+  highlights: ['أهرامات الجيزة', 'رحلات النيل', 'الغردقة وشرم الشيخ', 'المتحف المصري الكبير'],
+  photos: [
+    'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=900&q=80',
+    'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=900&q=80',
+    'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=900&q=80',
+    'https://images.unsplash.com/photo-1572252821143-02591603597d?w=900&q=80',
+  ],
+  places: [
+    { name: 'القاهرة والأهرامات', type: 'تراث', img: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=75', video: 'https://www.youtube.com/embed/3Q9f538x090' },
+    { name: 'الأقصر', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=400&q=75', video: 'https://www.youtube.com/embed/5a4Z2y60oZk' },
+    { name: 'أسوان', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=75', video: 'https://www.youtube.com/embed/34N5G32791o' },
+    { name: 'شرم الشيخ', type: 'ترفيه', img: 'https://images.unsplash.com/photo-1572252821143-02591603597d?w=400&q=75', video: 'https://www.youtube.com/embed/9X5433x090z' },
+  ],
+},
 };
 const placeTypeColors: Record<string, string> = {
   شاطئ: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
