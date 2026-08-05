@@ -175,7 +175,7 @@ const destinationData: Record<
     { name: 'كولومبو', type: 'مدينة', img: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=75', video: 'https://www.youtube.com/embed/Ra4tN35bjbw' },
     { name: 'صخرة سيغيريا', type: 'تراث', img: 'https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=400&q=75', video: 'https://www.youtube.com/embed/uJQz2uWr2E8' },
     { name: 'كاندي', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=75', video: 'https://www.youtube.com/embed/h287EIvXTtY' },
-    { name: 'إيلا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1516690553959-fc2bdb7e5c29?w=400&q=75', video: 'https://www.youtube.com/embed/Q0TarLx56-c' },
+    { name: 'إيلا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=400&q=75', video: 'https://www.youtube.com/embed/Q0TarLx56-c' },
   ],
 },
 Singapore: {
