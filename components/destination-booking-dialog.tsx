@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Dialog } from '@/components/ui/dialog'
-import { MapPin, Sun, Thermometer, Plane, Camera, Star, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react'
+import { MapPin, Sun, Thermometer, Plane, Camera, Star, ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 interface DestinationBookingDialogProps {
   destination: {
@@ -27,7 +27,7 @@ const destinationData: Record<
     rating: number
     highlights: string[]
     photos: string[]
-    places: { name: string; type: string; img: string }[]
+    places: { name: string; type: string; img: string; video?: string }[]
   }
 > = {
   Maldives: {
@@ -45,10 +45,10 @@ const destinationData: Record<
       'https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=900&q=80',
     ],
     places: [
-      { name: 'جزيرة مافوشي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75' },
-      { name: 'عاصمة ماليه', type: 'مدينة', img: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=75' },
-      { name: 'جزيرة بارو', type: 'منتجع', img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=75' },
-      { name: 'راا أتول', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=400&q=75' },
+      { name: 'جزيرة مافوشي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75', video: 'https://www.youtube.com/embed/RdFQyAvwP8M' },
+      { name: 'عاصمة ماليه', type: 'مدينة', img: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=75', video: 'https://www.youtube.com/embed/OEHrAZpXfxQ' },
+      { name: 'جزيرة بارو', type: 'منتجع', img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=75', video: 'https://www.youtube.com/embed/7n_4wnhLGQg' },
+      { name: 'راا أتول', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=400&q=75', video: 'https://www.youtube.com/embed/4q4n_Xct8HU' },
     ],
   },
   Malaysia: {
@@ -66,10 +66,10 @@ const destinationData: Record<
       'https://images.unsplash.com/photo-1617634038836-35b36ec06e64?w=900&q=80',
     ],
     places: [
-      { name: 'كوالالمبور', type: 'مدينة', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400&q=75' },
-      { name: 'جزيرة لنكاوي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&q=75' },
-      { name: 'بينانج', type: 'تراث', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400&q=75' },
-      { name: 'كاميرون هايلاندز', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75' },
+      { name: 'كوالالمبور', type: 'مدينة', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400&q=75', video: 'https://www.youtube.com/embed/SHe5ufSbHHw' },
+      { name: 'جزيرة لنكاوي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&q=75', video: 'https://www.youtube.com/embed/G3KNfM0k1c4' },
+      { name: 'بينانج', type: 'تراث', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400&q=75', video: 'https://www.youtube.com/embed/8X4WjHGJJGE' },
+      { name: 'كاميرون هايلاندز', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75', video: 'https://www.youtube.com/embed/t0ZO7iLOcF0' },
     ],
   },
   Thailand: {
@@ -87,10 +87,10 @@ const destinationData: Record<
       'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=900&q=80',
     ],
     places: [
-      { name: 'بانكوك', type: 'مدينة', img: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&q=75' },
-      { name: 'جزيرة بوكيت', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&q=75' },
-      { name: 'شيانغ ماي', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&q=75' },
-      { name: 'كوه سامي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=400&q=75' },
+      { name: 'بانكوك', type: 'مدينة', img: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&q=75', video: 'https://www.youtube.com/embed/TfAZKKxI1fE' },
+      { name: 'جزيرة بوكيت', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&q=75', video: 'https://www.youtube.com/embed/50VcL05FI2s' },
+      { name: 'شيانغ ماي', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&q=75', video: 'https://www.youtube.com/embed/V7I_oq6n0YY' },
+      { name: 'كوه سامي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=400&q=75', video: 'https://www.youtube.com/embed/x1z9RvU_8r0' },
     ],
   },
   Indonesia: {
@@ -108,10 +108,10 @@ const destinationData: Record<
       'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=900&q=80',
     ],
     places: [
-      { name: 'أوبود', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=75' },
-      { name: 'سيمينياك', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=75' },
-      { name: 'معبد تاناه لوت', type: 'تراث', img: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&q=75' },
-      { name: 'كوتا', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=400&q=75' },
+      { name: 'أوبود', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=75', video: 'https://www.youtube.com/embed/MjfNOFJSbm4' },
+      { name: 'سيمينياك', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=75', video: 'https://www.youtube.com/embed/NvhqHmHZjdU' },
+      { name: 'معبد تاناه لوت', type: 'تراث', img: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&q=75', video: 'https://www.youtube.com/embed/tAZqBHMF0x4' },
+      { name: 'كوتا', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=400&q=75', video: 'https://www.youtube.com/embed/IkdbVVR_yIw' },
     ],
   },
   Turkey: {
@@ -129,10 +129,10 @@ const destinationData: Record<
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80',
     ],
     places: [
-      { name: 'إسطنبول', type: 'مدينة', img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=75' },
-      { name: 'كبادوكيا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&q=75' },
-      { name: 'أنطاليا', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75' },
-      { name: 'أفسوس', type: 'تراث', img: 'https://images.unsplash.com/photo-1589561253898-768105ca91a8?w=400&q=75' },
+      { name: 'إسطنبول', type: 'مدينة', img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=75', video: 'https://www.youtube.com/embed/4h5NnK-5RIE' },
+      { name: 'كبادوكيا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&q=75', video: 'https://www.youtube.com/embed/PZbKdQyRVvU' },
+      { name: 'أنطاليا', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75', video: 'https://www.youtube.com/embed/EkKWBvNnzWQ' },
+      { name: 'أفسوس', type: 'تراث', img: 'https://images.unsplash.com/photo-1589561253898-768105ca91a8?w=400&q=75', video: 'https://www.youtube.com/embed/VO6Pm6RI2fQ' },
     ],
   },
   Vietnam: {
@@ -150,10 +150,10 @@ const destinationData: Record<
       'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=900&q=80',
     ],
     places: [
-      { name: 'خليج هالونج', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=75' },
-      { name: 'هانوي', type: 'مدينة', img: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=75' },
-      { name: 'هوشيمن', type: 'مدينة', img: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=75' },
-      { name: 'هوي أن', type: 'تراث', img: 'https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=400&q=75' },
+      { name: 'خليج هالونج', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=400&q=75', video: 'https://www.youtube.com/embed/YJq6b6fXfqE' },
+      { name: 'هانوي', type: 'مدينة', img: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=75', video: 'https://www.youtube.com/embed/D0RpIkfXJPc' },
+      { name: 'هوشيمن', type: 'مدينة', img: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=75', video: 'https://www.youtube.com/embed/MXqm9SvPWwU' },
+      { name: 'هوي أن', type: 'تراث', img: 'https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=400&q=75', video: 'https://www.youtube.com/embed/qU4OOhKZ_q8' },
     ],
   },
   'Sri Lanka': {
@@ -171,10 +171,10 @@ const destinationData: Record<
       'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=900&q=80',
     ],
     places: [
-      { name: 'كولومبو', type: 'مدينة', img: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=75' },
-      { name: 'صخرة سيغيريا', type: 'تراث', img: 'https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=400&q=75' },
-      { name: 'كاندي', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=75' },
-      { name: 'إيلا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1516690553959-fc2bdb7e5c29?w=400&q=75' },
+      { name: 'كولومبو', type: 'مدينة', img: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=75', video: 'https://www.youtube.com/embed/XiANvqHC5gI' },
+      { name: 'صخرة سيغيريا', type: 'تراث', img: 'https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=400&q=75', video: 'https://www.youtube.com/embed/GQFuZBe-8N0' },
+      { name: 'كاندي', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=75', video: 'https://www.youtube.com/embed/B6l3oJ3Mjlw' },
+      { name: 'إيلا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1516690553959-fc2bdb7e5c29?w=400&q=75', video: 'https://www.youtube.com/embed/pR5L2pBXN8c' },
     ],
   },
   Singapore: {
@@ -192,10 +192,10 @@ const destinationData: Record<
       'https://images.unsplash.com/photo-1559628233-100c798642d5?w=900&q=80',
     ],
     places: [
-      { name: 'مارينا باي', type: 'معالم', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&q=75' },
-      { name: 'حديقة الطيور', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=400&q=75' },
-      { name: 'سنتوسا', type: 'ترفيه', img: 'https://images.unsplash.com/photo-1559628233-100c798642d5?w=400&q=75' },
-      { name: 'شارع العرب', type: 'تراث', img: 'https://images.unsplash.com/photo-1569596082827-c5e8987ef9c4?w=400&q=75' },
+      { name: 'مارينا باي', type: 'معالم', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&q=75', video: 'https://www.youtube.com/embed/YXvxZ0P91yY' },
+      { name: 'حديقة الطيور', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=400&q=75', video: 'https://www.youtube.com/embed/y9yVEgJF8ac' },
+      { name: 'سنتوسا', type: 'ترفيه', img: 'https://images.unsplash.com/photo-1559628233-100c798642d5?w=400&q=75', video: 'https://www.youtube.com/embed/DBUoydR84ng' },
+      { name: 'شارع العرب', type: 'تراث', img: 'https://images.unsplash.com/photo-1569596082827-c5e8987ef9c4?w=400&q=75', video: 'https://www.youtube.com/embed/cG1x7HeCpCo' },
     ],
   },
 }
@@ -217,6 +217,7 @@ export function DestinationBookingDialog({
   onOpenChange,
 }: DestinationBookingDialogProps) {
   const [heroIndex, setHeroIndex] = useState(0)
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
 
   if (!destination) return null
 
@@ -372,9 +373,12 @@ export function DestinationBookingDialog({
               </h3>
               <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 {info.places.map((place) => (
-                  <div
+                  <button
                     key={place.name}
-                    className="overflow-hidden rounded-xl border border-border bg-card"
+                    onClick={() => place.video && setSelectedVideo(place.video)}
+                    className={`overflow-hidden rounded-xl border border-border bg-card text-left transition-transform hover:scale-105 ${
+                      place.video ? 'cursor-pointer' : ''
+                    }`}
                   >
                     {/* Place photo */}
                     <div className="relative h-24 w-full sm:h-28">
@@ -385,6 +389,15 @@ export function DestinationBookingDialog({
                         className="object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      {place.video && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity hover:opacity-100">
+                          <div className="rounded-full bg-white p-2">
+                            <svg className="h-5 w-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M5.5 2.5h9l-.8.8v11.4l.8.8h-9l.8-.8V3.3l-.8-.8zm2.4 1.6v10h5.2V4.1h-5.2z M9.8 6.5l4.4 2.5-4.4 2.5V6.5z" />
+                            </svg>
+                          </div>
+                        </div>
+                      )}
                     </div>
                     {/* Place name + badge */}
                     <div className="flex items-center justify-between gap-1 px-2 py-2 sm:px-3 sm:py-2.5">
@@ -397,8 +410,32 @@ export function DestinationBookingDialog({
                         {place.type}
                       </span>
                     </div>
-                  </div>
+                  </button>
                 ))}
+              </div>
+            </div>
+          )}
+
+          {/* Video Modal */}
+          {selectedVideo && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+              <div className="relative w-full max-w-2xl rounded-2xl bg-black">
+                <button
+                  onClick={() => setSelectedVideo(null)}
+                  className="absolute -right-10 -top-10 rounded-full bg-white p-2 text-black transition-opacity hover:opacity-80"
+                  aria-label="إغلاق"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+                <div className="aspect-video w-full">
+                  <iframe
+                    src={selectedVideo}
+                    title="Place Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="h-full w-full rounded-2xl"
+                  />
+                </div>
               </div>
             </div>
           )}
