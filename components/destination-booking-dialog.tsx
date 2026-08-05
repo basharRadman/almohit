@@ -29,6 +29,7 @@ const destinationData: Record<
     photos: string[]
     places: { name: string; type: string; img: string; video?: string }[]
   }
+
 > = {
   Maldives: {
     description:
@@ -45,7 +46,7 @@ const destinationData: Record<
       'https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=900&q=80',
     ],
     places: [
-      { name: 'جزيرة مافوشي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75', video: 'https://www.youtube.com/embed/RdFQyAvwP8M' },
+      { name: 'جزيرة مافوشي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75', video: 'https://www.youtube.com/embed/CPbzt8Qjt3I' },
       { name: 'عاصمة ماليه', type: 'مدينة', img: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=75', video: 'https://www.youtube.com/embed/OEHrAZpXfxQ' },
       { name: 'جزيرة بارو', type: 'منتجع', img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=75', video: 'https://www.youtube.com/embed/7n_4wnhLGQg' },
       { name: 'راا أتول', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=400&q=75', video: 'https://www.youtube.com/embed/4q4n_Xct8HU' },
@@ -66,7 +67,7 @@ const destinationData: Record<
       'https://images.unsplash.com/photo-1617634038836-35b36ec06e64?w=900&q=80',
     ],
     places: [
-      { name: 'كوالالمبور', type: 'مدينة', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400&q=75', video: 'https://www.youtube.com/embed/SHe5ufSbHHw' },
+      { name: 'كوالالمبور', type: 'مدينة', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400&q=75', video: 'https://www.youtube.com/embed/a4ZYMVyFxCY' },
       { name: 'جزيرة لنكاوي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&q=75', video: 'https://www.youtube.com/embed/G3KNfM0k1c4' },
       { name: 'بينانج', type: 'تراث', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400&q=75', video: 'https://www.youtube.com/embed/8X4WjHGJJGE' },
       { name: 'كاميرون هايلاندز', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75', video: 'https://www.youtube.com/embed/t0ZO7iLOcF0' },
@@ -79,7 +80,7 @@ const destinationData: Record<
     bestTime: 'نوفمبر – فبراير',
     flightTime: '6.5 ساعة',
     rating: 4.8,
-    highlights: ['معابد بوذية', 'شواطئ خلابة', 'الأسواق العائمة', 'سباحة الأفيال'],
+    highlights: ['معابد بوذية', 'شواطئ خلابة', 'الأسوق العائمة', 'سباحة الأفيال'],
     photos: [
       'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=900&q=80',
       'https://images.unsplash.com/photo-1528181304800-259b08848526?w=900&q=80',
@@ -90,7 +91,7 @@ const destinationData: Record<
       { name: 'بانكوك', type: 'مدينة', img: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&q=75', video: 'https://www.youtube.com/embed/TfAZKKxI1fE' },
       { name: 'جزيرة بوكيت', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&q=75', video: 'https://www.youtube.com/embed/50VcL05FI2s' },
       { name: 'شيانغ ماي', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&q=75', video: 'https://www.youtube.com/embed/V7I_oq6n0YY' },
-      { name: 'كوه سامي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=400&q=75', video: 'https://www.youtube.com/embed/x1z9RvU_8r0' },
+      { name: 'كوه ساموي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=400&q=75', video: 'https://www.youtube.com/embed/x1z9RvU_8r0' },
     ],
   },
   Indonesia: {
@@ -130,7 +131,7 @@ const destinationData: Record<
     ],
     places: [
       { name: 'إسطنبول', type: 'مدينة', img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=75', video: 'https://www.youtube.com/embed/4h5NnK-5RIE' },
-      { name: 'كبادوكيا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&q=75', video: 'https://www.youtube.com/embed/PZbKdQyRVvU' },
+      { name: 'كبادوكيا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&q=75', video: 'https://www.youtube.com/embed/_JJUg7LGBOc' },
       { name: 'أنطاليا', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75', video: 'https://www.youtube.com/embed/EkKWBvNnzWQ' },
       { name: 'أفسوس', type: 'تراث', img: 'https://images.unsplash.com/photo-1589561253898-768105ca91a8?w=400&q=75', video: 'https://www.youtube.com/embed/VO6Pm6RI2fQ' },
     ],
@@ -198,8 +199,7 @@ const destinationData: Record<
       { name: 'شارع العرب', type: 'تراث', img: 'https://images.unsplash.com/photo-1569596082827-c5e8987ef9c4?w=400&q=75', video: 'https://www.youtube.com/embed/cG1x7HeCpCo' },
     ],
   },
-}
-
+};
 const placeTypeColors: Record<string, string> = {
   شاطئ: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
   مدينة: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
