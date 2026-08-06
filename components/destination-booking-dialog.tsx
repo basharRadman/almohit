@@ -29,262 +29,321 @@ const destinationData: Record<
     photos: string[]
     places: { name: string; type: string; img: string; video?: string }[]
   }
-
 > = {
-  Maldives: {
-    description:
-      'المالديف جنة استوائية في المحيط الهندي تتميز بمياهها الفيروزية الصافية والشعاب المرجانية الخلابة وفنادق الفيلات المائية الفاخرة.',
-    climate: 'استوائي دافئ',
-    bestTime: 'نوفمبر – أبريل',
-    flightTime: '6 ساعات',
-    rating: 4.9,
-    highlights: ['غوص وسنوركل', 'فيلات مائية', 'غروب الشمس', 'مأكولات بحرية'],
-    photos: [
-      'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=900&q=80',
-      'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=900&q=80',
-      'https://images.unsplash.com/photo-1540202404-1b927e27fa8b?w=900&q=80',
-      'https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=900&q=80',
-    ],
-    places: [
-      { name: 'جزيرة مافوشي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75', video: 'https://www.youtube.com/embed/CPbzt8Qjt3I' },
-      { name: 'عاصمة ماليه', type: 'مدينة', img: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=75', video: 'https://www.youtube.com/embed/SCQauw5VVDo' },
-      { name: 'جزيرة بارو', type: 'منتجع', img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=75', video: 'https://www.youtube.com/embed/zQzWzMDZ9Zs' },
-      { name: 'راا أتول', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=400&q=75', video: 'https://www.youtube.com/embed/iQqxsnB6XIw' },
-    ],
-  },
-  Malaysia: {
-  description:
-    'ماليزيا وجهة متنوعة تجمع بين ناطحات السحاب الحديثة وأدغال المطر البكر والشواطئ الاستوائية الساحرة والتراث الثقافي الغني.',
-  climate: 'استوائي رطب',
-  bestTime: 'مارس – أكتوبر',
-  flightTime: '7 ساعات',
-  rating: 4.7,
-  highlights: ['برج بتروناس', 'غابات المطر', 'المطبخ المتنوع', 'التسوق'],
-  photos: [
-    'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=900&q=80',
-    'https://images.unsplash.com/photo-1529307474719-3d0a417aaf8a?w=900&q=80',
-    'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=900&q=80',
-    'https://images.unsplash.com/photo-1617634038836-35b36ec06e64?w=900&q=80',
-  ],
-  places: [
-    { name: 'كوالالمبور', type: 'مدينة', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400&q=75', video: 'https://www.youtube.com/embed/Xv0velteJnc' },
-    { name: 'جزيرة لنكاوي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&q=75', video: 'https://www.youtube.com/embed/TLrt5wH6-ew' },
-    { name: 'بينانج', type: 'تراث', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400&q=75', video: 'https://www.youtube.com/embed/SqoozK8twsc' },
-    { name: 'كاميرون هايلاندز', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75', video: 'https://www.youtube.com/embed/L7mHvwO91TQ' },
-  ],
-},
- Thailand: {
-  description:
-    'تايلاند أرض الابتسامة تسحرك بمعابدها الذهبية الباذخة وشواطئها الكريستالية وثقافتها العريقة ومطبخها الشهير عالمياً.',
-  climate: 'استوائي حار',
-  bestTime: 'نوفمبر – فبراير',
-  flightTime: '6.5 ساعة',
-  rating: 4.8,
-  highlights: ['معابد بوذية', 'شواطئ خلابة', 'الأسوق العائمة', 'سباحة الأفيال'],
-  photos: [
-    'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=900&q=80',
-    'https://images.unsplash.com/photo-1528181304800-259b08848526?w=900&q=80',
-    'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=900&q=80',
-    'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=900&q=80',
-  ],
-  places: [
-    { name: 'بانكوك', type: 'مدينة', img: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&q=75', video: 'https://www.youtube.com/embed/KyC_mKy7Zf8' },
-    { name: 'جزيرة بوكيت', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&q=75', video: 'https://www.youtube.com/embed/m_pCh6p8_wg' },
-    { name: 'شيانغ ماي', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&q=75', video: 'https://www.youtube.com/embed/tH3Y-0i5jR8' },
-    { name: 'كوه ساموي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=400&q=75', video: 'https://www.youtube.com/embed/5Pe9VO9oShg' },
-  ],
-},
- Indonesia: {
-  description:
-    'بالي جوهرة إندونيسيا المتاجرة بأرزها المدرجات وهيكلها الهندوسية ومصطبات الأرز الزمردية وشواطئها الرائعة.',
-  climate: 'استوائي',
-  bestTime: 'أبريل – أكتوبر',
-  flightTime: '8 ساعات',
-  rating: 4.8,
-  highlights: ['حقول الأرز', 'معابد هندوسية', 'تصفح الأمواج', 'العلاج التقليدي'],
-  photos: [
-    'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900&q=80',
-    'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=900&q=80',
-    'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=900&q=80',
-    'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=900&q=80',
-  ],
-  places: [
-    { name: 'أوبود', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=75', video: 'https://www.youtube.com/embed/llxUYanaUsw' },
-    { name: 'سيمينياك', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=75', video: 'https://www.youtube.com/embed/jEhW7oIhrQc' },
-    { name: 'معبد تاناه لوت', type: 'تراث', img: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&q=75', video: 'https://www.youtube.com/embed/Zr_uD_knJ3E' },
-    { name: 'كوتا', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=400&q=75', video: 'https://www.youtube.com/embed/iiRv_I6hKKs' },
-  ],
-},
- Turkey: {
-  description:
-    'تركيا ملتقى الحضارات تأخذك في رحلة عبر التاريخ بين قباب إسطنبول الزرقاء وتضاريس كبادوكيا الفريدة وشواطئ البحر الأبيض الدافئة.',
-  climate: 'معتدل متوسطي',
-  bestTime: 'أبريل – يونيو / سبتمبر – نوفمبر',
-  flightTime: '3.5 ساعة',
-  rating: 4.7,
-  highlights: ['المسجد الأزرق', 'بالون الهواء', 'الحمامات التركية', 'المطبخ العثماني'],
-  photos: [
-    'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=900&q=80',
-    'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=900&q=80',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80',
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80',
-  ],
-  places: [
-    { name: 'إسطنبول', type: 'مدينة', img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=75', video: 'https://www.youtube.com/embed/lgKJR4EmHSk' },
-    { name: 'كبادوكيا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&q=75', video: 'https://www.youtube.com/embed/gDkNtCp0sLM' },
-    { name: 'أنطاليا', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75', video: 'https://www.youtube.com/embed/seMcqqnbZ5I' },
-    { name: 'أفسوس', type: 'تراث', img: 'https://images.unsplash.com/photo-1589561253898-768105ca91a8?w=400&q=75', video: 'https://www.youtube.com/embed/mvPCtrZ1K00' },
-  ],
-},
- Vietnam: {
-  description:
-    'فيتنام كنز آسيا المخفي بتنوعها المذهل من خليج هالونج الأسطوري إلى مدينة هوي أن العريقة ومدرجات موكانشاي الخضراء.',
-  climate: 'استوائي موسمي',
-  bestTime: 'فبراير – أبريل',
-  flightTime: '7 ساعات',
-  rating: 4.6,
-  highlights: ['خليج هالونج', 'مدينة هوي أن', 'مدرجات الأرز', 'المطبخ الشهير'],
-  photos: [
-    '/dest-vietnam.png?w=900&q=80',
-    'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80',
-    'https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=900&q=80',
-    'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=900&q=80',
-  ],
-  places: [
-    { name: 'خليج هالونج', type: 'طبيعة', img: '/dest-vietnam.png?w=400&q=75', video: 'https://www.youtube.com/embed/XRUw6-GoS24' },
-    { name: 'هانوي', type: 'مدينة', img: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=75', video: 'https://www.youtube.com/embed/6yKlTn-LBFU' },
-    { name: 'هوشيمن', type: 'مدينة', img: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=75', video: 'https://www.youtube.com/embed/D7F6pTXmvWw' },
-    { name: 'هوي أن', type: 'تراث', img: 'https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=400&q=75', video: 'https://www.youtube.com/embed/owz2JyWMwkE' },
-  ],
-},
-'Sri Lanka': {
-  description:
-    'سريلانكا الجوهرة في المحيط الهندي تقدم مزيجاً فريداً من الشواطئ الذهبية والغابات المطيرة ومزارع الشاي الخضراء والمعابد البوذية الروحية.',
-  climate: 'استوائي رطب',
-  bestTime: 'ديسمبر – مارس',
-  flightTime: '5 ساعات',
-  rating: 4.5,
-  highlights: ['الصخرة الأسدية', 'مزارع الشاي', 'سفاري الأفيال', 'معابد بوذية'],
-  photos: [
-    'https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=900&q=80',
-    'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=900&q=80',
-    'https://images.unsplash.com/photo-1516690553959-fc2bdb7e5c29?w=900&q=80',
-    'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=900&q=80',
-  ],
-  places: [
-    { name: 'كولومبو', type: 'مدينة', img: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=75', video: 'https://www.youtube.com/embed/Ra4tN35bjbw' },
-    { name: 'صخرة سيغيريا', type: 'تراث', img: 'https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=400&q=75', video: 'https://www.youtube.com/embed/uJQz2uWr2E8' },
-    { name: 'كاندي', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=75', video: 'https://www.youtube.com/embed/h287EIvXTtY' },
-    { name: 'إيلا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=400&q=75', video: 'https://www.youtube.com/embed/Q0TarLx56-c' },
-  ],
-},
-Singapore: {
-  description:
-    'سنغافورة مدينة المستقبل حيث تلتقي ناطحات السحاب بالحدائق الخضراء والمطبخ العالمي والتجارب الترفيهية الأكثر إبهاراً في آسيا.',
-  climate: 'استوائي معتدل',
-  bestTime: 'طوال العام',
-  flightTime: '7.5 ساعة',
-  rating: 4.8,
-  highlights: ['حدائق الشجرة', 'أوركيد جاردن', 'مارينا باي', 'يونيفرسال ستوديوز'],
-  photos: [
-    'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80',
-    'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=900&q=80',
-    'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=900&q=80',
-    'https://unsplash.com/photos-a-pool-surrounded-by-trees-and-a-body-of-water-Thtqvl-VKKA?w=900&q=80',
-  ],
-  places: [
-    { name: 'مارينا باي', type: 'معالم', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&q=75', video: 'https://www.youtube.com/embed/3nA0vQWiI28' },
-    { name: 'حديقة الطيور', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=400&q=75', video: 'https://www.youtube.com/embed/JeJtrrRxE-k' },
-    { name: 'سنتوسا', type: 'ترفيه', img: 'https://unsplash.com/photos-a-pool-surrounded-by-trees-and-a-body-of-water-Thtqvl-VKKA?w=400&q=75', video: 'https://www.youtube.com/embed/3BT-0_dJVwQ' },
-    { name: 'شارع العرب', type: 'تراث', img: 'https://unsplash.com/photos-street-view-of-singapore-with-masjid-sultan-BL4KVQWV8-Q?w=400&q=75', video: 'https://www.youtube.com/embed/PKVnTMUPI3k' },
-  ],
-},
-Egypt: {
-  description:
-    'مصر أسطورة التاريخ ومهد الحضارات، تجمع بين سحر الأهرامات الخالدة ونهر النيل العظيم وعجائب البحر الأحمر وشوارع القاهرة النابضة بالحياة.',
-  climate: 'صحراوي جاف',
-  bestTime: 'أكتوبر – أبريل',
-  flightTime: '3.5 ساعة',
-  rating: 4.7,
-  highlights: ['أهرامات الجيزة', 'رحلات النيل', 'الغردقة وشرم الشيخ', 'المتحف المصري الكبير'],
-  photos: [
-    'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=900&q=80',
-    'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=900&q=80',
-    'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=900&q=80',
-    'https://unsplash.com/photos/beach-on-the-corniche-in-jeddah-saudi-arabia-omuPUOJ2Hy0',
-  ],
-  places: [
-    { name: 'القاهرة والأهرامات', type: 'تراث', img: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=75', video: 'https://www.youtube.com/embed/BapSQFJPMM0' },
-    { name: 'الأقصر', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=400&q=75', video: 'https://www.youtube.com/embed/l_Np9vgYcg0' },
-    { name: 'أسوان', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=75', video: 'https://www.youtube.com/embed/zDUccHozBww' },
-    { name: 'شرم الشيخ', type: 'ترفيه', img: 'https://unsplash.com/photos-beach-on-the-corniche-in-jeddah-saudi-arabia-omuPUOJ2Hy0?w=400&q=75', video: 'https://www.youtube.com/embed/4AaQkXIAebw' },
-  ],
-},
-China: {
-  description:
-    'الصين أرض التناقضات المذهلة، تجمع بين سور الصين العظيم والتاريخ الإمبراطوري العريق وناطحات السحاب المستقبلية والمناظر الطبيعية الساحرة.',
-  climate: 'متنوع (معتدل إلى قاري)',
-  bestTime: 'سبتمبر – نوفمبر',
-  flightTime: '9 ساعات',
-  rating: 4.7,
-  highlights: ['سور الصين العظيم', 'المدينة المحرمة', 'جيش التيراكوتا', 'جبال تشانغجياجيه'],
-  photos: [
-    'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=900&q=80',
-    'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=900&q=80',
-    'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=900&q=80',
-    'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=900&q=80',
-  ],
-  places: [
-    { name: 'بكين', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=400&q=75', video: 'https://www.youtube.com/embed/1WBTZrJSQZA' },
-    { name: 'شانغهاي', type: 'مدينة', img: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=400&q=75', video: 'https://www.youtube.com/embed/RqO7uq8_Qsc' },
-    { name: 'تشانغجياجيه', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=400&q=75', video: 'https://www.youtube.com/embed/MIWXK7fPRTY' },
-    { name: 'شيآن', type: 'تراث', img: 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=400&q=75', video: 'https://www.youtube.com/embed/K5ifj5DrtpI' },
-  ],
-},
-Russia: {
-  description:
-    'روسيا امبراطورية التنوع والحجم الهائل، تجمع بين الساحة الحمراء والقصور الملكية الفخمة في وسحر الشفق القطبي وقطار السكك الحديدية العابرة لسيبيريا.',
-  climate: 'قاري بارد',
-  bestTime: 'مايو – سبتمبر',
-  flightTime: '5.5 ساعة',
-  rating: 4.6,
-  highlights: ['الساحة الحمراء', 'قصر بيترهوف', 'متحف هيرميتاج', 'بحيرة بايكال'],
-  photos: [
-    'https://images.unsplash.com/photo-1513326718677-b9e44ea7463f?w=900&q=80',
-    'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=900&q=80',
-    'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=900&q=80',
-    'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=900&q=80',
-  ],
-  places: [
-    { name: 'موسكو', type: 'العاصمة', img: 'https://images.unsplash.com/photo-1513326718677-b9e44ea7463f?w=400&q=75', video: 'https://www.youtube.com/embed/7TWxSzf-gI8' },
-    { name: 'سانت بطرسبرغ', type: 'تراث', img: 'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=400&q=75', video: 'https://www.youtube.com/embed/zUEj7cm25XE' },
-    { name: 'بحيرة بايكال', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=400&q=75', video: 'https://www.youtube.com/embed/34N5G32791o' },
-    { name: 'كازان', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=75', video: 'https://www.youtube.com/embed/mGZ8OP1urIs' },
-  ],
-},
-Britain: {
-  description:
-    'بريطانيا عراقة التاريخ والرقي الملكي، تجمع بين سحر لندن الحديثة والتلال الخضراء الساحرة والقلوع الأثرية والثقافة العريقة.',
-  climate: 'معتدل محيطي',
-  bestTime: 'مايو – سبتمبر',
-  flightTime: '6.5 ساعة',
-  rating: 4.7,
-  highlights: ['برج ساعة بيغ بن', 'قصر باكنغهام', 'بحيرة لوخ نيس', 'مرتفعات أسط his السكوتلاندية'],
-  photos: [
-    'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80',
-    'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=900&q=80',
-    'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=900&q=80',
-    'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=900&q=80',
-  ],
-  places: [
-    { name: 'لندن', type: 'العاصمة', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=75', video: 'https://www.youtube.com/embed/jmoPo11ktN4' },
-    { name: 'إدنبرة', type: 'تراث', img: 'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=400&q=75', video: 'https://www.youtube.com/embed/SRNyfBRhq0A' },
-    { name: 'مانشستر', type: 'مدينة', img: 'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=400&q=75', video: 'https://www.youtube.com/embed/vGMABqZDGE8' },
-    { name: 'أوكسفورد', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=400&q=75', video: 'https://www.youtube.com/embed/pa5JMF-A97E' },
-  ],
-},
+  Maldives: {
+    description:
+      'المالديف جنة استوائية في المحيط الهندي تتميز بمياهها الفيروزية الصافية والشعاب المرجانية الخلابة وفنادق الفيلات المائية الفاخرة.',
+    climate: 'استوائي دافئ',
+    bestTime: 'نوفمبر – أبريل',
+    flightTime: '6 ساعات',
+    rating: 4.9,
+    highlights: ['غوص وسنوركل', 'فيلات مائية', 'غروب الشمس', 'مأكولات بحرية'],
+    photos: [
+      'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=900&q=80',
+      'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=900&q=80',
+      'https://images.unsplash.com/photo-1540202404-1b927e27fa8b?w=900&q=80',
+      'https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=900&q=80',
+    ],
+    places: [
+      { name: 'جزيرة مافوشي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75', video: 'https://www.youtube.com/embed/CPbzt8Qjt3I' },
+      { name: 'عاصمة ماليه', type: 'مدينة', img: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=75', video: 'https://www.youtube.com/embed/SCQauw5VVDo' },
+      { name: 'جزيرة بارو', type: 'منتجع', img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=75', video: 'https://www.youtube.com/embed/zQzWzMDZ9Zs' },
+      { name: 'راا أتول', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=400&q=75', video: 'https://www.youtube.com/embed/iQqxsnB6XIw' },
+    ],
+  },
+  Malaysia: {
+    description:
+      'ماليزيا وجهة متنوعة تجمع بين ناطحات السحاب الحديثة وأدغال المطر البكر والشواطئ الاستوائية الساحرة والتراث الثقافي الغني.',
+    climate: 'استوائي رطب',
+    bestTime: 'مارس – أكتوبر',
+    flightTime: '7 ساعات',
+    rating: 4.7,
+    highlights: ['برج بتروناس', 'غابات المطر', 'المطبخ المتنوع', 'التسوق'],
+    photos: [
+      'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=900&q=80',
+      'https://images.unsplash.com/photo-1529307474719-3d0a417aaf8a?w=900&q=80',
+      'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=900&q=80',
+      'https://images.unsplash.com/photo-1617634038836-35b36ec06e64?w=900&q=80',
+    ],
+    places: [
+      { name: 'كوالالمبور', type: 'مدينة', img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400&q=75', video: 'https://www.youtube.com/embed/Xv0velteJnc' },
+      { name: 'جزيرة لنكاوي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&q=75', video: 'https://www.youtube.com/embed/TLrt5wH6-ew' },
+      { name: 'بينانج', type: 'تراث', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400&q=75', video: 'https://www.youtube.com/embed/SqoozK8twsc' },
+      { name: 'كاميرون هايلاندز', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75', video: 'https://www.youtube.com/embed/L7mHvwO91TQ' },
+    ],
+  },
+  Thailand: {
+    description:
+      'تايلاند أرض الابتسامة تسحرك بمعابدها الذهبية الباذخة وشواطئها الكريستالية وثقافتها العريقة ومطبخها الشهير عالمياً.',
+    climate: 'استوائي حار',
+    bestTime: 'نوفمبر – فبراير',
+    flightTime: '6.5 ساعة',
+    rating: 4.8,
+    highlights: ['معابد بوذية', 'شواطئ خلابة', 'الأسوق العائمة', 'سباحة الأفيال'],
+    photos: [
+      'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=900&q=80',
+      'https://images.unsplash.com/photo-1528181304800-259b08848526?w=900&q=80',
+      'https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=900&q=80',
+      'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=900&q=80',
+    ],
+    places: [
+      { name: 'بانكوك', type: 'مدينة', img: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&q=75', video: 'https://www.youtube.com/embed/KyC_mKy7Zf8' },
+      { name: 'جزيرة بوكيت', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&q=75', video: 'https://www.youtube.com/embed/m_pCh6p8_wg' },
+      { name: 'شيانغ ماي', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&q=75', video: 'https://www.youtube.com/embed/tH3Y-0i5jR8' },
+      { name: 'كوه ساموي', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=400&q=75', video: 'https://www.youtube.com/embed/5Pe9VO9oShg' },
+    ],
+  },
+  Indonesia: {
+    description:
+      'بالي جوهرة إندونيسيا المتاجرة بأرزها المدرجات وهيكلها الهندوسية ومصطبات الأرز الزمردية وشواطئها الرائعة.',
+    climate: 'استوائي',
+    bestTime: 'أبريل – أكتوبر',
+    flightTime: '8 ساعات',
+    rating: 4.8,
+    highlights: ['حقول الأرز', 'معابد هندوسية', 'تصفح الأمواج', 'العلاج التقليدي'],
+    photos: [
+      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900&q=80',
+      'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=900&q=80',
+      'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=900&q=80',
+      'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=900&q=80',
+    ],
+    places: [
+      { name: 'أوبود', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=75', video: 'https://www.youtube.com/embed/llxUYanaUsw' },
+      { name: 'سيمينياك', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=75', video: 'https://www.youtube.com/embed/jEhW7oIhrQc' },
+      { name: 'معبد تاناه لوت', type: 'تراث', img: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&q=75', video: 'https://www.youtube.com/embed/Zr_uD_knJ3E' },
+      { name: 'كوتا', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=400&q=75', video: 'https://www.youtube.com/embed/iiRv_I6hKKs' },
+    ],
+  },
+  Turkey: {
+    description:
+      'تركيا ملتقى الحضارات تأخذك في رحلة عبر التاريخ بين قباب إسطنبول الزرقاء وتضاريس كبادوكيا الفريدة وشواطئ البحر الأبيض الدافئة.',
+    climate: 'معتدل متوسطي',
+    bestTime: 'أبريل – يونيو / سبتمبر – نوفمبر',
+    flightTime: '3.5 ساعة',
+    rating: 4.7,
+    highlights: ['المسجد الأزرق', 'بالون الهواء', 'الحمامات التركية', 'المطبخ العثماني'],
+    photos: [
+      'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=900&q=80',
+      'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=900&q=80',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80',
+    ],
+    places: [
+      { name: 'إسطنبول', type: 'مدينة', img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=75', video: 'https://www.youtube.com/embed/lgKJR4EmHSk' },
+      { name: 'كبادوكيا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=400&q=75', video: 'https://www.youtube.com/embed/gDkNtCp0sLM' },
+      { name: 'أنطاليا', type: 'شاطئ', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75', video: 'https://www.youtube.com/embed/seMcqqnbZ5I' },
+      { name: 'أفسوس', type: 'تراث', img: 'https://images.unsplash.com/photo-1589561253898-768105ca91a8?w=400&q=75', video: 'https://www.youtube.com/embed/mvPCtrZ1K00' },
+    ],
+  },
+  Vietnam: {
+    description:
+      'فيتنام كنز آسيا المخفي بتنوعها المذهل من خليج هالونج الأسطوري إلى مدينة هوي أن العريقة ومدرجات موكانشاي الخضراء.',
+    climate: 'استوائي موسمي',
+    bestTime: 'فبراير – أبريل',
+    flightTime: '7 ساعات',
+    rating: 4.6,
+    highlights: ['خليج هالونج', 'مدينة هوي أن', 'مدرجات الأرز', 'المطبخ الشهير'],
+    photos: [
+      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=80',
+      'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80',
+      'https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=900&q=80',
+      'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=900&q=80',
+    ],
+    places: [
+      { name: 'خليج هالونج', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=75', video: 'https://www.youtube.com/embed/XRUw6-GoS24' },
+      { name: 'هانوي', type: 'مدينة', img: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&q=75', video: 'https://www.youtube.com/embed/6yKlTn-LBFU' },
+      { name: 'هوشيمن', type: 'مدينة', img: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=75', video: 'https://www.youtube.com/embed/D7F6pTXmvWw' },
+      { name: 'هوي أن', type: 'تراث', img: 'https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=400&q=75', video: 'https://www.youtube.com/embed/owz2JyWMwkE' },
+    ],
+  },
+  'Sri Lanka': {
+    description:
+      'سريلانكا الجوهرة في المحيط الهندي تقدم مزيجاً فريداً من الشواطئ الذهبية والغابات المطيرة ومزارع الشاي الخضراء والمعابد البوذية الروحية.',
+    climate: 'استوائي رطب',
+    bestTime: 'ديسمبر – مارس',
+    flightTime: '5 ساعات',
+    rating: 4.5,
+    highlights: ['الصخرة الأسدية', 'مزارع الشاي', 'سفاري الأفيال', 'معابد بوذية'],
+    photos: [
+      'https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=900&q=80',
+      'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=900&q=80',
+      'https://images.unsplash.com/photo-1516690553959-fc2bdb7e5c29?w=900&q=80',
+      'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=900&q=80',
+    ],
+    places: [
+      { name: 'كولومبو', type: 'مدينة', img: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&q=75', video: 'https://www.youtube.com/embed/Ra4tN35bjbw' },
+      { name: 'صخرة سيغيريا', type: 'تراث', img: 'https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=400&q=75', video: 'https://www.youtube.com/embed/uJQz2uWr2E8' },
+      { name: 'كاندي', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=75', video: 'https://www.youtube.com/embed/h287EIvXTtY' },
+      { name: 'إيلا', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=400&q=75', video: 'https://www.youtube.com/embed/Q0TarLx56-c' },
+    ],
+  },
+  Singapore: {
+    description:
+      'سنغافورة مدينة المستقبل حيث تلتقي ناطحات السحاب بالحدائق الخضراء والمطبخ العالمي والتجارب الترفيهية الأكثر إبهاراً في آسيا.',
+    climate: 'استوائي معتدل',
+    bestTime: 'طوال العام',
+    flightTime: '7.5 ساعة',
+    rating: 4.8,
+    highlights: ['حدائق الشجرة', 'أوركيد جاردن', 'مارينا باي', 'يونيفرسال ستوديوز'],
+    photos: [
+      'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80',
+      'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?w=900&q=80',
+      'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=900&q=80',
+      'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=900&q=80',
+    ],
+    places: [
+      {
+        name: 'مارينا باي',
+        type: 'معالم',
+        img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&q=75',
+        video: 'https://www.youtube.com/embed/3nA0vQWiI28',
+      },
+      {
+        name: 'حديقة الطيور',
+        type: 'طبيعة',
+        img: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400&q=75',
+        video: 'https://www.youtube.com/embed/JeJtrrRxE-k',
+      },
+      {
+        name: 'سنتوسا',
+        type: 'ترفيه',
+        img: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=75',
+        video: 'https://www.youtube.com/embed/3BT-0_dJVwQ',
+      },
+      {
+        name: 'شارع العرب',
+        type: 'تراث',
+        img: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=400&q=75',
+        video: 'https://www.youtube.com/embed/PKVnTMUPI3k',
+      },
+    ],
+  },
+  Egypt: {
+    description:
+      'مصر أسطورة التاريخ ومهد الحضارات، تجمع بين سحر الأهرامات الخالدة ونهر النيل العظيم وعجائب البحر الأحمر وشوارع القاهرة النابضة بالحياة.',
+    climate: 'صحراوي جاف',
+    bestTime: 'أكتوبر – أبريل',
+    flightTime: '3.5 ساعة',
+    rating: 4.7,
+    highlights: ['أهرامات الجيزة', 'رحلات النيل', 'الغردقة وشرم الشيخ', 'المتحف المصري الكبير'],
+    photos: [
+      'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=900&q=80', // القاهرة والأهرامات
+      'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=900&q=80', // الأقصر
+      'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=900&q=80', // أسوان
+      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80', // شرم الشيخ
+    ],
+    places: [
+      {
+        name: 'القاهرة والأهرامات',
+        type: 'تراث',
+        img: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=400&q=75',
+        video: 'https://www.youtube.com/embed/BapSQFJPMM0',
+      },
+      {
+        name: 'الأقصر',
+        type: 'تاريخ',
+        img: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=400&q=75',
+        video: 'https://www.youtube.com/embed/l_Np9vgYcg0',
+      },
+      {
+        name: 'أسوان',
+        type: 'طبيعة',
+        img: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=400&q=75',
+        video: 'https://www.youtube.com/embed/zDUccHozBww',
+      },
+      {
+        name: 'شرم الشيخ',
+        type: 'ترفيه',
+        img: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=75',
+        video: 'https://www.youtube.com/embed/4AaQkXIAebw',
+      },
+    ],
+  },
+  China: {
+    description:
+      'الصين أرض التناقضات المذهلة، تجمع بين سور الصين العظيم والتاريخ الإمبراطوري العريق وناطحات السحاب المستقبلية والمناظر الطبيعية الساحرة.',
+    climate: 'متنوع (معتدل إلى قاري)',
+    bestTime: 'سبتمبر – نوفمبر',
+    flightTime: '9 ساعات',
+    rating: 4.7,
+    highlights: ['سور الصين العظيم', 'المدينة المحرمة', 'جيش التيراكوتا', 'جبال تشانغجياجيه'],
+    photos: [
+      'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=900&q=80',
+      'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=900&q=80',
+      'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=900&q=80',
+      'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=900&q=80',
+    ],
+    places: [
+      { name: 'بكين', type: 'تاريخ', img: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=400&q=75', video: 'https://www.youtube.com/embed/1WBTZrJSQZA' },
+      { name: 'شانغهاي', type: 'مدينة', img: 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=400&q=75', video: 'https://www.youtube.com/embed/RqO7uq8_Qsc' },
+      { name: 'تشانغجياجيه', type: 'طبيعة', img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=400&q=75', video: 'https://www.youtube.com/embed/MIWXK7fPRTY' },
+      { name: 'شيآن', type: 'تراث', img: 'https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=400&q=75', video: 'https://www.youtube.com/embed/K5ifj5DrtpI' },
+    ],
+  },
+  Russia: {
+    description:
+      'روسيا امبراطورية التنوع والحجم الهائل، تجمع بين الساحة الحمراء والقصور الملكية الفخمة وسحر الشفق القطبي وقطار السكك الحديدية العابرة لسيبيريا.',
+    climate: 'قاري بارد',
+    bestTime: 'مايو – سبتمبر',
+    flightTime: '5.5 ساعة',
+    rating: 4.6,
+    highlights: ['الساحة الحمراء', 'قصر بيترهوف', 'متحف هيرميتاج', 'بحيرة بايكال'],
+    photos: [
+      'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=900&q=80', // موسكو / الساحة الحمراء
+      'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=900&q=80', // سانت بطرسبرغ
+      'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=900&q=80', // بحيرة بايكال
+      'https://images.unsplash.com/photo-1578637387939-43c525550085?w=900&q=80', // كازان
+    ],
+    places: [
+      {
+        name: 'موسكو',
+        type: 'العاصمة',
+        img: 'https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=75',
+        video: 'https://www.youtube.com/embed/7TWxSzf-gI8',
+      },
+      {
+        name: 'سانت بطرسبرغ',
+        type: 'تراث',
+        img: 'https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=400&q=75',
+        video: 'https://www.youtube.com/embed/zUEj7cm25XE',
+      },
+      {
+        name: 'بحيرة بايكال',
+        type: 'طبيعة',
+        img: 'https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=400&q=75',
+        video: 'https://www.youtube.com/embed/34N5G32791o',
+      },
+      {
+        name: 'كازان',
+        type: 'ثقافة',
+        img: 'https://images.unsplash.com/photo-1578637387939-43c525550085?w=400&q=75',
+        video: 'https://www.youtube.com/embed/mGZ8OP1urIs',
+      },
+    ],
+  },
+  Britain: {
+    description:
+      'بريطانيا عراقة التاريخ والرقي الملكي، تجمع بين سحر لندن الحديثة والتلال الخضراء الساحرة والقلوع الأثرية والثقافة العريقة.',
+    climate: 'معتدل محيطي',
+    bestTime: 'مايو – سبتمبر',
+    flightTime: '6.5 ساعة',
+    rating: 4.7,
+    highlights: ['برج ساعة بيغ بن', 'قصر باكنغهام', 'بحيرة لوخ نيس', 'مرتفعات أسط his السكوتلاندية'],
+    photos: [
+      'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80',
+      'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=900&q=80',
+      'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=900&q=80',
+      'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=900&q=80',
+    ],
+    places: [
+      { name: 'لندن', type: 'العاصمة', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=75', video: 'https://www.youtube.com/embed/jmoPo11ktN4' },
+      { name: 'إدنبرة', type: 'تراث', img: 'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=400&q=75', video: 'https://www.youtube.com/embed/SRNyfBRhq0A' },
+      { name: 'مانشستر', type: 'مدينة', img: 'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=400&q=75', video: 'https://www.youtube.com/embed/vGMABqZDGE8' },
+      { name: 'أوكسفورد', type: 'ثقافة', img: 'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=400&q=75', video: 'https://www.youtube.com/embed/pa5JMF-A97E' },
+    ],
+  },
+}
 
-};
 const placeTypeColors: Record<string, string> = {
   شاطئ: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
   مدينة: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
