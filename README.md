@@ -1,33 +1,85 @@
-# almohit
+# 🌊 شركة المحيط للسياحة والسفر | Almohit Travel & Tours
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+![Vercel Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Next.js](https://img.shields.io/badge/Built%20with-Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.x-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Language](https://img.shields.io/badge/Language-Arabic%20%2F%20English-green?style=for-the-badge)
 
-## Built with v0
+الموقع الرسمي والتطبيقي لـ **شركة المحيط للسياحة والسفر (Almohit Travel & Tours)** — منصة حديثة واستعراض شامل للوجهات والباقات السياحية، خدمات الحجز، والبرامج المصممة خصيصًا للمسافر العربي في شرق آسيا وحول العالم.
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+🔗 **الموقع المباشر (Live Demo):** [https://almohit.vercel.app/](https://almohit.vercel.app/)
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_zmQgn6slkycg3hrdAudYO7yeUKju)
+---
 
-## Getting Started
+## 📋 جدول المحتويات (Table of Contents)
 
-First, run the development server:
+- [عن المشروع](#-عن-المشروع)
+- [المميزات الرئيسية](#-المميزات-الرئيسية)
+- [التقنيات المستخدمة](#-التقنيات-المستخدمة)
+- [أقسام الموقع](#-أقسام-الموقع)
+- [التثبيت والتشغيل المحلي](#-التثبيت-والتشغيل-المحلي)
+- [النشر على Vercel](#-النشر-على-vercel)
+- [بيانات التواصل](#-بيانات-التواصل)
+- [الترخيص](#-الترخيص)
 
+---
+
+## ℹ️ عن المشروع
+
+**المحيط للسياحة والسفر** هي منصة ويب تفاعلية وسريعة تم تصميمها وتطويرها لتقديم واجهة عصرية وجذابة لخدمات السياحة والسفر. توفر المنصة تجربة مستخدم سلسة واستجابة كاملة على جميع الشاشات (الهواتف، الآيباد، والحاسوب) للعملاء الراغبين في حجز وتخطيط رحلاتهم إلى ماليزيا، تايلاند، المالديف، إندونيسيا، سنغافورة، تركيا، وغيرها من الوجهات العالمية.
+
+---
+
+## ✨ المميزات الرئيسية
+
+* 🎨 **تصميم عصري وجذاب:** واجهة مستخدم ناعمة وفاخرة تدعم اللغتين العربية والإنجليزية.
+* 📱 **تصميم متجاوب بالكامل (Fully Responsive):** مخصص للعمل بكفاءة عالية على الهواتف والأجهزة اللوحية والمكتبية.
+* ⚡ **أداء فائق وسريع:** مبني باستخدام **Next.js** مع تحسين الصور والخطوط تلقائيًا.
+* 💬 **تكامل مباشر مع WhatsApp:** زر تواصل سريع ومباشر على الواتساب لحجز الرحلات واستقبال الاستفسارات.
+* 🗺️ **استعراض الوجهات والباقات:** عرض تفصيلي لأشهر الوجهات والبرامج السياحية مع صور عالية الجودة.
+* 🌟 **قسم آراء العملاء:** استعراض تقييمات وتجارب المسافرين السابقين.
+* 📰 **مدونة ونصائح سياحية:** مقالات وإرشادات للمسافر العربي (دليل التسوق، شهر العسل، أوقات الزيارة).
+* 🔍 **تحسين محركات البحث (SEO):** تهيئة كاملة للكلمات المفتاحية والوسوم الوصفية (Open Graph & Meta Tags).
+
+---
+
+## 🛠️ التقنيات المستخدمة
+
+تم بناء المشروع باستخدام أحدث تقنيات الويب الحديثة:
+
+* **الإطار البرمجي (Framework):** [Next.js](https://nextjs.org/) (React Framework)
+* **التنسيق والأنماط (Styling):** [Tailwind CSS](https://tailwindcss.com/)
+* **أيقونات ووسائط:** FontAwesome / Lucide React / SVG Icons
+* **الخطوط (Fonts):** Google Fonts (خطوط عربية عصرية مثل Tajawal / Readex Pro)
+* **الاستضافة والنشر (Hosting):** [Vercel](https://vercel.com/)
+
+---
+
+## 📌 أقسام الموقع
+
+1. **الهيدر والترويسة (Header & Navigation):** القائمة الرئيسية مع شعار الشركة ورابط سريع للواتساب.
+2. **القسم الرئيسي (Hero Section):** عنوان ترحيبي عريض، خلفية استوائية جذابة، وإحصائيات الشركة (15+ عام خبرة، 50k+ مسافر، 98% نسبة رضا).
+3. **قسم الوجهات (Destinations):** كروت تفاعلية للوجهات الرئيسية (ماليزيا، تايلاند، المالديف، بالي، إلخ).
+4. **قسم الخدمات (Services):**
+   * ✈️ حجوزات الطيران
+   * 🏨 حجز الفنادق والمنتجعات
+   * 🗺️ الجولات السياحية الخاصة
+   * 📄 خدمات التأشيرات
+   * 🚗 النقل والمواصلات السريعة
+   * 🛥️ الرحلات البحرية والكروز
+5. **لماذا المحيط؟ (Why Choose Us):** نقاط القوة والخدمات المتميزة.
+6. **آراء العملاء (Testimonials):** قصص نجاح وتجارب المسافرين.
+7. **نصائح ومقالات سياحية (Blog/Tips):** أدلة سياحية شاملة.
+8. **الفوتير (Footer):** روابط سريعة، معلومات التواصل، والحقوق المحفوظة.
+
+---
+
+## 🚀 التثبيت والتشغيل المحلي
+
+لتشغيل هذا المشروع على جهازك المحلي، اتبع الخطوات التالية:
+
+### 1. استنساخ المستودع (Clone the repository)
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+git clone [https://github.com/your-username/almohit-travel.git](https://github.com/your-username/almohit-travel.git)
+cd almohit-travel
