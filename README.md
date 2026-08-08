@@ -6,7 +6,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.x-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Language](https://img.shields.io/badge/Language-Arabic%20%2F%20English-green?style=for-the-badge)
 
-الموقع الرسمي والتطبيقي لـ **شركة المحيط للسياحة والسفر (Almohit Travel & Tours)** — منصة حديثة واستعراض شامل للوجهات والباقات السياحية، خدمات الحجز، والبرامج المصممة خصيصًا للمسافر العربي في شرق آسيا وحول العالم.
+تصميم مطور للموقع  لـ **شركة المحيط للسياحة والسفر (Almohit Travel & Tours)** — استعراض شامل للوجهات والباقات السياحية، خدمات الحجز، والبرامج المصممة خصيصًا للمسافر العربي في شرق آسيا وحول العالم.
 
 🔗 **الموقع المباشر (Live Demo):** [https://almohit.vercel.app/](https://almohit.vercel.app/)
 
